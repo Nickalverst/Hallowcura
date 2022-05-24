@@ -1,14 +1,15 @@
 #pragma once
-#include "Entidade.h"
+#include "Personagem.h"
 class Jogador :
-    public Entidade
+    public Personagem
 {
 private:
 
 public:
-    Jogador();
+    Jogador(Vector2f position);
     ~Jogador();
 
     virtual void executar();
+
 };
 

@@ -1,8 +1,7 @@
 #include "Jogador.h"
-#include "SFML/Graphics.hpp"
-using namespace sf;
 
-Jogador::Jogador()
+Jogador::Jogador(Vector2f position) :
+    Personagem(position, Vector2f(50.f,50.f), Color::Blue)
 {
 }
 
