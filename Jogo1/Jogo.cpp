@@ -5,6 +5,7 @@ Jogo::Jogo() :
     jogador(Vector2f(500.f, 500.f))
 {
     jogador.setWindow(&window);
+    window.setVerticalSyncEnabled(true);
     executar();
 }
 
@@ -26,6 +27,7 @@ void Jogo::executar()
         window.clear();
         // Desenhar
         jogador.imprimir_se();
+        jogador.executar();
 
         window.display();
     }

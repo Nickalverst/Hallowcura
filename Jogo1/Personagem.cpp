@@ -1,7 +1,7 @@
 #include "Personagem.h"
 
 Personagem::Personagem(Vector2f position, Vector2f size, Color color):
-	Entidade(position, size, color),
+	Entidade(position, size, color, 0.1f, 0.1f, 10.f),
 	num_vidas(-1)
 {
 }
