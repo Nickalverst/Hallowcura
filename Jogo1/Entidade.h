@@ -1,5 +1,7 @@
 #pragma once
-class Entidade
+#include "Ente.h"
+class Entidade :
+	public Ente
 {
 protected:
 	int x, y;
