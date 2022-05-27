@@ -1,6 +1,7 @@
 #include "Jogo.h"
 
 Jogo::Jogo() :
+    GG(),
     window(VideoMode(1280, 720), "Game title!"),
     jogador(Vector2f(500.f, 500.f))
 {

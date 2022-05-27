@@ -80,7 +80,7 @@ void Jogador::executar()
     }
     else // Objeto está no chão
     {
-        velocidade.y = 0; //body.setPosition(Vector2f(body.getPosition().x, groundHeight - body.getSize().y)); // Funcionava antes, agora não fica mais na altura certa
+        velocidade.y = 0;
         pulando = false;
     }
 }
