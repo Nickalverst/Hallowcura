@@ -4,10 +4,12 @@ using namespace sf;
 #include <iostream>
 using namespace std;
 
+class Gerenciador_Grafico;
+
 class Ente
 {
 protected:
-	RenderWindow* window;
+	Gerenciador_Grafico* GG;
 	int id;
 	RectangleShape body;
 
@@ -17,6 +19,6 @@ public:
 	virtual void executar() = 0;
 	void imprimir_se();
 
-	void setWindow(RenderWindow* w);
+	void setGG(Gerenciador_Grafico* g);
 };
 

@@ -11,8 +11,24 @@ Gerenciador_Grafico::~Gerenciador_Grafico()
 	
 }
 
-void Gerenciador_Grafico::desenhar(ListaEntidades* le)
+void Gerenciador_Grafico::desenhar(Entidade* e)
 {
+	e->imprimir_se();
+}
+
+void Gerenciador_Grafico::desenhar(Fase* f)
+{
+	window.clear();
+
+	f->imprimir_se();
+	f->imprimirEntidades();
+
+	window.display();
+}
+
+void Gerenciador_Grafico::desenhar(RectangleShape body)
+{
+	window.draw(body);
 }
 
 const bool Gerenciador_Grafico::isOpen() const
@@ -28,14 +44,4 @@ bool Gerenciador_Grafico::pollEvent(Event e)
 void Gerenciador_Grafico::close()
 {
 	window.close();
-}
-
-void Gerenciador_Grafico::clear()
-{
-	window.clear();
-}
-
-void Gerenciador_Grafico::display()
-{
-	window.display();
 }

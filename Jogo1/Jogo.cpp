@@ -2,11 +2,12 @@
 
 Jogo::Jogo() :
     GG(),
-    window(VideoMode(1280, 720), "Game title!"),
-    jogador(Vector2f(500.f, 500.f))
+    jogador(Vector2f(500.f, 500.f)),
+    fase1()
 {
-    jogador.setWindow(&window);
-    window.setVerticalSyncEnabled(true);
+    fase1.setGG(&GG);
+    fase1.incluirEntidades(&jogador);
+    jogador.setGG(&GG);
     executar();
 }
 
@@ -16,20 +17,17 @@ Jogo::~Jogo()
 
 void Jogo::executar()
 {
-    while (window.isOpen())
+    while (GG.getWindow()->isOpen())
     {
-        sf::Event event;
-        while (window.pollEvent(event))
+        Event event;
+        while (GG.getWindow()->pollEvent(event))
         {
-            if (event.type == sf::Event::Closed)
-                window.close();
+            if (event.type == Event::Closed)
+                GG.getWindow()->close();
         }
 
-        window.clear();
-        // Desenhar
-        jogador.imprimir_se();
+        fase1.executar();
         jogador.executar();
-
-        window.display();
+        GG.desenhar(static_cast<Fase*>(&fase1));
     }
 }

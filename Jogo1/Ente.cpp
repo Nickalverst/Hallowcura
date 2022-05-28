@@ -1,7 +1,7 @@
 #include "Ente.h"
-
+#include "Gerenciador_Grafico.h"
 Ente::Ente(Vector2f position, Vector2f size, Color color):
-	window(nullptr),
+	GG(nullptr),
 	id(-1)
 {
 	body.setPosition(position);
@@ -15,10 +15,10 @@ Ente::~Ente()
 
 void Ente::imprimir_se()
 {
-	window->draw(body);
+	GG->desenhar(body);
 }
 
-void Ente::setWindow(RenderWindow* w)
+void Ente::setGG(Gerenciador_Grafico* g)
 {
-	window = w;
+	GG = g;
 }

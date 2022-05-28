@@ -70,7 +70,7 @@ void Jogador::executar()
 
     /// LOCAL TEMPORÁRIO ///
     float gravity = 1.f;
-    float groundHeight = (float)window->getSize().y;
+    float groundHeight = 720;//(float)window->getSize().y;
     /// LOCAL TEMPORÁRIO ///
 
     // Gravidade
