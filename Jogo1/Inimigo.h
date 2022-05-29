@@ -9,4 +9,3 @@ public:
     Inimigo();
     ~Inimigo();
 };
-
