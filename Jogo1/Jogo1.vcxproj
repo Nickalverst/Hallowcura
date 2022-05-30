@@ -145,6 +145,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Barro.cpp" />
     <ClCompile Include="Ente.cpp" />
     <ClCompile Include="Entidade.cpp" />
     <ClCompile Include="Fase.cpp" />
@@ -155,10 +156,12 @@
     <ClCompile Include="Jogo.cpp" />
     <ClCompile Include="ListaEntidades.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Obstaculo.cpp" />
     <ClCompile Include="Personagem.cpp" />
     <ClCompile Include="Zumbi.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Barro.h" />
     <ClInclude Include="Elemento.h" />
     <ClInclude Include="Ente.h" />
     <ClInclude Include="Entidade.h" />
@@ -170,6 +173,7 @@
     <ClInclude Include="Jogo.h" />
     <ClInclude Include="Lista.h" />
     <ClInclude Include="ListaEntidades.h" />
+    <ClInclude Include="Obstaculo.h" />
     <ClInclude Include="Personagem.h" />
     <ClInclude Include="Zumbi.h" />
   </ItemGroup>
