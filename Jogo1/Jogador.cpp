@@ -68,15 +68,10 @@ void Jogador::executar()
 
     body.move(velocidade);
 
-    /// LOCAL TEMPORÁRIO ///
-    float gravity = 1.f;
-    float groundHeight = 720;//(float)window->getSize().y;
-    /// LOCAL TEMPORÁRIO ///
-
     // Gravidade
-    if (body.getPosition().y + body.getSize().y < groundHeight) // Objeto está no ar
+    if (body.getPosition().y + body.getSize().y < alturaChao) // Objeto está no ar
     {
-        velocidade.y += gravity;
+        velocidade.y += gravidade;
     }
     else // Objeto está no chão
     {

@@ -1,6 +1,7 @@
 #include "Inimigo.h"
 
-Inimigo::Inimigo()
+Inimigo::Inimigo(Vector2f position, Vector2f size, Color c):
+	Personagem(position, size, c)
 {
 }
 

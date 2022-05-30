@@ -6,6 +6,7 @@ class Jogador :
 private:
     float velocidadePulo;
     bool pulando;
+
 public:
     Jogador(Vector2f position);
     ~Jogador();

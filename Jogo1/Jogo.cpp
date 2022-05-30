@@ -3,11 +3,12 @@
 Jogo::Jogo() :
     GG(),
     jogador(Vector2f(500.f, 500.f)),
-    fase1()
+    fase1(&GG)
 {
     fase1.setGG(&GG);
-    fase1.incluirEntidades(&jogador);
     jogador.setGG(&GG);
+
+    fase1.incluirEntidades(&jogador);
     executar();
 }
 

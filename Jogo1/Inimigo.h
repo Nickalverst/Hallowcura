@@ -6,6 +6,8 @@ class Inimigo :
 private:
 
 public:
-    Inimigo();
+    Inimigo(Vector2f position, Vector2f size, Color c);
     ~Inimigo();
+
+    virtual void executar() = 0;
 };

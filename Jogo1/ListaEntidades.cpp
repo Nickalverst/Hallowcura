@@ -36,7 +36,7 @@ void ListaEntidades::imprimir()
 	while (nullptr != pElAux)
 	{
 		pEntAux = pElAux->getInfo();
-		pEntAux->imprimir_se();
+		pEntAux->imprimir_se(); // O problema está aqui.
 		pElAux = pElAux->getProximo();
 	}
 }

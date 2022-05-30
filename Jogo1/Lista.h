@@ -24,10 +24,10 @@ public:
 };
 
 template<class TL>
-Lista<TL>::Lista()
+Lista<TL>::Lista():
+    pPrimeiro(nullptr),
+    pUltimo(nullptr)
 {
-    pPrimeiro = nullptr;
-    pUltimo = nullptr;
 }
 
 template<class TL>
