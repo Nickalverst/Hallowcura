@@ -36,7 +36,19 @@ void ListaEntidades::imprimir()
 	while (nullptr != pElAux)
 	{
 		pEntAux = pElAux->getInfo();
-		pEntAux->imprimir_se(); // O problema está aqui.
+		pEntAux->imprimir_se();
+		pElAux = pElAux->getProximo();
+	}
+}
+
+void ListaEntidades::executar()
+{
+	Elemento<Entidade>* pElAux = LEs.getPrimeiro();
+	Entidade* pEntAux = nullptr;
+	while (nullptr != pElAux)
+	{
+		pEntAux = pElAux->getInfo();
+		pEntAux->executar();
 		pElAux = pElAux->getProximo();
 	}
 }

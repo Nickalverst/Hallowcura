@@ -15,6 +15,7 @@ public:
 	void remover(Entidade* e);
 
 	void imprimir();
+	void executar();
 
 	const int getTamanho() const;
 };

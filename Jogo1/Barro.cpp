@@ -1,7 +1,7 @@
 #include "Barro.h"
 
 Barro::Barro() :
-	Obstaculo()
+	ObstaculoDeslizante(-1.f)
 {
 }
 

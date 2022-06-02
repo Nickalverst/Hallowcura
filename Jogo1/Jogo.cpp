@@ -28,7 +28,7 @@ void Jogo::executar()
         }
 
         fase1.executar();
-        jogador.executar();
+        //jogador.executar();
         GG.desenhar(static_cast<Fase*>(&fase1));
     }
 }

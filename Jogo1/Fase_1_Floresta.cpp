@@ -15,5 +15,5 @@ Fase_1_Floresta::~Fase_1_Floresta()
 
 void Fase_1_Floresta::executar()
 {
-	zumbi.executar();
+	LE.executar();
 }

@@ -4,6 +4,8 @@ using namespace sf;
 #include <iostream>
 using namespace std;
 
+#define SIZE 3.0f
+
 class Gerenciador_Grafico;
 
 class Ente
@@ -11,7 +13,8 @@ class Ente
 protected:
 	Gerenciador_Grafico* GG;
 	int id;
-	RectangleShape body;
+	Texture tex;
+	Sprite sprite;
 
 public:
 	Ente(Vector2f position = Vector2f(0.f, 0.f), Vector2f size = Vector2f(0.f, 0.f), Color color = Color::White);

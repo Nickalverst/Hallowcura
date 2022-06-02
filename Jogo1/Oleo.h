@@ -1,13 +1,13 @@
 #pragma once
 #include "ObstaculoDeslizante.h"
-class Barro :
+class Oleo :
     public ObstaculoDeslizante
 {
 private:
 
 public:
-    Barro();
-    ~Barro();
+    Oleo();
+    ~Oleo();
 
     virtual void executar();
 };

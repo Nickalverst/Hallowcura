@@ -1,7 +1,7 @@
 #include "Gerenciador_Grafico.h"
 
 Gerenciador_Grafico::Gerenciador_Grafico():
-	window(VideoMode(1280, 720), "Game title!")
+	window(VideoMode(1600, 900), "Game title!")
 {
 	window.setVerticalSyncEnabled(true);
 }
@@ -22,7 +22,7 @@ void Gerenciador_Grafico::desenhar(Fase* f)
 
 	f->imprimir_se();
 	
-	f->imprimirEntidades(); // O problema está aqui
+	f->imprimirEntidades();
 
 	window.display();
 }
@@ -30,6 +30,11 @@ void Gerenciador_Grafico::desenhar(Fase* f)
 void Gerenciador_Grafico::desenhar(RectangleShape body)
 {
 	window.draw(body);
+}
+
+void Gerenciador_Grafico::desenhar(Sprite s)
+{
+	window.draw(s);
 }
 
 const bool Gerenciador_Grafico::isOpen() const
