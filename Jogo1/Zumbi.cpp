@@ -22,12 +22,12 @@ void Zumbi::executar()
     // Gravidade
     if (sprite.getPosition().y + sprite.getLocalBounds().height < alturaChao) // Objeto está no ar
     {
-        cout << "posicao y: " << sprite.getPosition().y << endl;
+        cout << "Tamanho y da textura: " << sprite.getPosition().y << endl;
         velocidade.y += gravidade;
     }
     else // Objeto está no chão
     {
-        velocidade.y = 0;
+        sprite.setPosition(Vector2f(sprite.getPosition().x, alturaChao - sprite.getLocalBounds().height));
     }
 
     sprite.move(velocidade);

@@ -93,6 +93,7 @@ void Jogador::executar()
     }
     else // Objeto está no chão
     {
+        sprite.setPosition(Vector2f(sprite.getPosition().x, alturaChao - sprite.getLocalBounds().height));
         velocidade.y = 0;
         pulando = false;
     }
