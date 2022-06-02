@@ -17,7 +17,7 @@ protected:
 	Sprite sprite;
 
 public:
-	Ente(Vector2f position = Vector2f(0.f, 0.f), Vector2f size = Vector2f(0.f, 0.f), Color color = Color::White);
+	Ente(Vector2f position = Vector2f(0.f, 0.f));
 	~Ente();
 	virtual void executar() = 0;
 	void imprimir_se();

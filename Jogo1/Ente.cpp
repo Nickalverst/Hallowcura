@@ -1,7 +1,7 @@
 #include "Ente.h"
 #include "Gerenciador_Grafico.h"
 
-Ente::Ente(Vector2f position, Vector2f size, Color color):
+Ente::Ente(Vector2f position):
 	GG(nullptr),
 	id(-1)
 {

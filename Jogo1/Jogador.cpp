@@ -1,11 +1,11 @@
 #include "Jogador.h"
 
 Jogador::Jogador(Vector2f position) :
-    Personagem(position, Vector2f(50.f, 50.f), Color::Blue),
+    Personagem(position),
     velocidadePulo(15.f),
     pulando(false)
 {
-    if (!tex.loadFromFile("assets/jogador.png"))
+    if (!tex.loadFromFile("assets/jogador_idle.png"))
     {
         cerr << "Erro ao carregar a textura do jogador. " << endl;
     }

@@ -1,15 +1,15 @@
 #include "Zumbi.h"
 
 Zumbi::Zumbi():
-	Inimigo(Vector2f(250.f, 250.f), Vector2f(30.f, 80.f), Color::Red)
+	Inimigo(Vector2f(250.f, 250.f))
 {
-    if (!tex.loadFromFile("assets/zumbi.png"))
+    if (!tex.loadFromFile("assets/zumbi_andando.png"))
     {
-        cerr << "Erro ao carregar a textura do jogador. " << endl;
+        cerr << "Erro ao carregar a textura do zumbi. " << endl;
     }
 
     sprite.setTexture(tex);
-    sprite.setOrigin(Vector2f(tex.getSize().x / 2, tex.getSize().y));
+    sprite.setOrigin(Vector2f((float) tex.getSize().x / 2, (float) tex.getSize().y));
     sprite.scale(Vector2f(SIZE, SIZE));
 }
 
