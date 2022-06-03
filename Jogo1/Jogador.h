@@ -6,6 +6,9 @@ class Jogador :
 private:
     float velocidadePulo;
     bool pulando;
+    Texture jogador_pulando,
+        jogador_andando,
+        jogador_morto;
 
 public:
     Jogador(Vector2f position);

@@ -151,6 +151,7 @@
     <ClCompile Include="Entidade.cpp" />
     <ClCompile Include="Fase.cpp" />
     <ClCompile Include="Fase_1_Floresta.cpp" />
+    <ClCompile Include="Fase_2_Ponte.cpp" />
     <ClCompile Include="Gerenciador_Grafico.cpp" />
     <ClCompile Include="Inimigo.cpp" />
     <ClCompile Include="Jogador.cpp" />
@@ -160,6 +161,7 @@
     <ClCompile Include="Obstaculo.cpp" />
     <ClCompile Include="ObstaculoDeslizante.cpp" />
     <ClCompile Include="Oleo.cpp" />
+    <ClCompile Include="Olho.cpp" />
     <ClCompile Include="Personagem.cpp" />
     <ClCompile Include="Zumbi.cpp" />
   </ItemGroup>
@@ -171,6 +173,7 @@
     <ClInclude Include="Entidade.h" />
     <ClInclude Include="Fase.h" />
     <ClInclude Include="Fase_1_Floresta.h" />
+    <ClInclude Include="Fase_2_Ponte.h" />
     <ClInclude Include="Gerenciador_Grafico.h" />
     <ClInclude Include="Inimigo.h" />
     <ClInclude Include="Jogador.h" />
@@ -180,6 +183,7 @@
     <ClInclude Include="Obstaculo.h" />
     <ClInclude Include="ObstaculoDeslizante.h" />
     <ClInclude Include="Oleo.h" />
+    <ClInclude Include="Olho.h" />
     <ClInclude Include="Personagem.h" />
     <ClInclude Include="Zumbi.h" />
   </ItemGroup>

@@ -4,7 +4,7 @@ using namespace sf;
 #include <iostream>
 using namespace std;
 
-#define SIZE 3.0f
+#define SIZE 4.0f
 
 class Gerenciador_Grafico;
 

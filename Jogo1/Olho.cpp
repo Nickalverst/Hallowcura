@@ -1,23 +1,25 @@
-#include "Zumbi.h"
+#include "Olho.h"
 
-Zumbi::Zumbi(Vector2f pos):
-	Inimigo(pos)
+Olho::Olho(Vector2f pos) :
+	Inimigo(pos),
+    velocidadeVoo(15),
+    alturaVoo(500)
 {
-    if (!tex.loadFromFile("assets/zumbi_andando.png"))
+    if (!tex.loadFromFile("assets/olho_idle.png"))
     {
         cerr << "Erro ao carregar a textura do zumbi. " << endl;
     }
 
     sprite.setTexture(tex);
-    sprite.setOrigin(Vector2f((float) tex.getSize().x / 2, (float) tex.getSize().y));
+    sprite.setOrigin(Vector2f((float)tex.getSize().x / 2, (float)tex.getSize().y));
     sprite.scale(Vector2f(SIZE, SIZE));
 }
 
-Zumbi::~Zumbi()
+Olho::~Olho()
 {
 }
 
-void Zumbi::executar()
+void Olho::executar()
 {
     // Gravidade
     if (sprite.getPosition().y + sprite.getLocalBounds().height < alturaChao) // Objeto está no ar
@@ -31,5 +33,16 @@ void Zumbi::executar()
         velocidade.y = 0.0f;
     }
 
+    if (sprite.getPosition().y + sprite.getLocalBounds().height > alturaVoo)
+    {
+        baterAsas();
+    }
+
     sprite.move(velocidade);
+}
+
+void Olho::baterAsas()
+{
+    //sprite.setTexture(jogador_pulando);
+    velocidade.y = -velocidadeVoo;
 }

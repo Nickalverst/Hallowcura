@@ -6,7 +6,7 @@ class Zumbi :
 private:
 
 public:
-    Zumbi();
+    Zumbi(Vector2f pos);
     ~Zumbi();
 
     virtual void executar();
