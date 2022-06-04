@@ -1,5 +1,7 @@
 #pragma once
 #include "Inimigo.h"
+#include "Laser.h"
+
 class Olho :
     public Inimigo
 {
@@ -12,5 +14,6 @@ public:
 
     virtual void executar();
     void baterAsas();
+    Laser* atirar(Vector2f alvo);
 };
 

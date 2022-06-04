@@ -15,6 +15,8 @@ Fase_1_Floresta::Fase_1_Floresta(Gerenciador_Grafico* g, Jogador* j) :
 	sprite.setTexture(tex);
 
 	criarEntidades();
+
+
 }
 
 Fase_1_Floresta::~Fase_1_Floresta()
@@ -73,5 +75,12 @@ void Fase_1_Floresta::criarEntidades()
 		posicoesOlho.pop();
 		LE.inserir(static_cast<Entidade*>(aux));
 		GC.inserirInimigo(static_cast<Inimigo*>(aux));
+		
+		// Para teste do disparo: 
+		cout << "Mandando atirar... " << endl;
+		Laser* tiro = aux->atirar(jogador->getPosicao());
+		LE.inserir(static_cast<Entidade*>(tiro));
+		tiro->setGG(GG);
+		GC.inserirProjetil(tiro);
 	}
 }

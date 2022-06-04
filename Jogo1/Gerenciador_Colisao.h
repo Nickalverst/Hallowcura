@@ -4,11 +4,13 @@
 #include "Inimigo.h"
 #include "Obstaculo.h"
 #include "Jogador.h"
+#include "Laser.h"
 
 class Gerenciador_Colisao
 {
 private:
     vector<Inimigo*> LIs;
+    vector<Laser*> LPs;
     list<Obstaculo*> LOs;
     Jogador* j1;
 
@@ -20,5 +22,6 @@ public:
 
     void inserirInimigo(Inimigo* ini);
     void inserirObstaculo(Obstaculo* obs);
+    void inserirProjetil(Laser* las);
 };
 

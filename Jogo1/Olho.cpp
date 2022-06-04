@@ -46,3 +46,9 @@ void Olho::baterAsas()
     //sprite.setTexture(jogador_pulando);
     velocidade.y = -velocidadeVoo;
 }
+
+Laser* Olho::atirar(Vector2f alvo)
+{
+    Laser* aux = new Laser(sprite.getPosition(), alvo);
+    return aux;
+}

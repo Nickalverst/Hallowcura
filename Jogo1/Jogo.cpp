@@ -2,7 +2,7 @@
 
 Jogo::Jogo() :
     GG(),
-    jogador(Vector2f(500.f, 500.f)),
+    jogador(Vector2f(500.f, 800.f)),
     fase1(&GG, &jogador)
 {
     fase1.setGG(&GG);
