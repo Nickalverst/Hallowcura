@@ -2,7 +2,7 @@
 
 Jogador::Jogador(Vector2f position) :
     Personagem(position),
-    velocidadePulo(20.f),
+    velocidadePulo(15.f),
     pulando(false)
 {
     if (!tex.loadFromFile("assets/jogador_idle.png"))
@@ -98,8 +98,6 @@ void Jogador::executar()
         velocidade.x = 0;
         sprite.setTexture(tex);
     }
-
-    cout << "Velocidade horizontal do jogador: " << velocidade.x << endl;
 
     sprite.move(velocidade);
 

@@ -10,7 +10,7 @@ private:
     Gerenciador_Grafico* GG;
 
 public:
-    Fase_1_Floresta(Gerenciador_Grafico* g);
+    Fase_1_Floresta(Gerenciador_Grafico* g, Jogador* j);
     ~Fase_1_Floresta();
 
     virtual void executar();

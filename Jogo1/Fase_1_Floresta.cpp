@@ -3,8 +3,8 @@
 #include <time.h>
 #include <stack>
 
-Fase_1_Floresta::Fase_1_Floresta(Gerenciador_Grafico* g) :
-	Fase(),
+Fase_1_Floresta::Fase_1_Floresta(Gerenciador_Grafico* g, Jogador* j) :
+	Fase(j),
 	GG(g)
 {
 	// Fundo de tela
@@ -36,21 +36,23 @@ void Fase_1_Floresta::criarEntidades()
 
 	// Possíveis posições de spawn do zumbi
 	stack<Vector2f> posicoesZumbi;
-	posicoesZumbi.push(Vector2f(50, 150));
-	posicoesZumbi.push(Vector2f(100, 150));
-	posicoesZumbi.push(Vector2f(150, 150));
-	posicoesZumbi.push(Vector2f(200, 150));
-	posicoesZumbi.push(Vector2f(250, 150));
-	posicoesZumbi.push(Vector2f(300, 150));
+	
+	posicoesZumbi.push(Vector2f(700, 800));
+	posicoesZumbi.push(Vector2f(100, 800));
+	posicoesZumbi.push(Vector2f(300, 800));
+	posicoesZumbi.push(Vector2f(1100, 800));
+	posicoesZumbi.push(Vector2f(500, 800));
+	posicoesZumbi.push(Vector2f(900, 800));
+	
 
 	// Possíveis posições de spawn do olho
 	stack<Vector2f> posicoesOlho;
-	posicoesOlho.push(Vector2f(350, 500));
-	posicoesOlho.push(Vector2f(200, 500));
-	posicoesOlho.push(Vector2f(400, 500));
-	posicoesOlho.push(Vector2f(600, 500));
-	posicoesOlho.push(Vector2f(750, 500));
-	posicoesOlho.push(Vector2f(800, 500));
+	posicoesOlho.push(Vector2f(300, 300));
+	posicoesOlho.push(Vector2f(500, 300));
+	posicoesOlho.push(Vector2f(700, 300));
+	posicoesOlho.push(Vector2f(900, 300));
+	posicoesOlho.push(Vector2f(1100, 300));
+	posicoesOlho.push(Vector2f(1300, 300));
 
 	cout << "Zumbis: " << n_zumbis << ". Olhos: " << n_olhos << endl;
 
@@ -66,7 +68,6 @@ void Fase_1_Floresta::criarEntidades()
 	// Criar OlhoAlado
 	for (int i = 0; i < n_olhos; i++)
 	{
-		// escolher position na lista de posicoes de olho aleatoriamente
 		Olho* aux = new Olho(posicoesOlho.top());
 		aux->setGG(GG);
 		posicoesOlho.pop();

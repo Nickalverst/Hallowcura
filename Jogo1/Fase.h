@@ -1,15 +1,17 @@
 #pragma once
 #include "Ente.h"
 #include "ListaEntidades.h"
+#include "Jogador.h"
 
 class Fase:
 	public Ente
 {
 protected:
 	ListaEntidades LE;
+	Jogador* jogador;
 
 public:
-	Fase();
+	Fase(Jogador* j);
 	~Fase();
 
 	void imprimirEntidades();

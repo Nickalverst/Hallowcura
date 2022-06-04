@@ -23,5 +23,7 @@ public:
 	void imprimir_se();
 
 	void setGG(Gerenciador_Grafico* g);
+	const Vector2f getTamanho() const;
+	const Vector2f getPosicao() const;
 };
 

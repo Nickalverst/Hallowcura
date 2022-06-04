@@ -17,5 +17,6 @@ public:
 	~Jogo();
 
 	void executar();
+	const Jogador* getJogador() const;
 };
 

@@ -3,7 +3,7 @@
 Jogo::Jogo() :
     GG(),
     jogador(Vector2f(500.f, 500.f)),
-    fase1(&GG)
+    fase1(&GG, &jogador)
 {
     fase1.setGG(&GG);
     jogador.setGG(&GG);
@@ -28,7 +28,11 @@ void Jogo::executar()
         }
 
         fase1.executar();
-        //jogador.executar();
         GG.desenhar(static_cast<Fase*>(&fase1));
     }
+}
+
+const Jogador* Jogo::getJogador() const
+{
+    return (&jogador);
 }

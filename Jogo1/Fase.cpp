@@ -1,7 +1,9 @@
 #include "Fase.h"
 
-Fase::Fase():
-	Ente()
+Fase::Fase(Jogador* j):
+	Ente(),
+	LE(),
+	jogador(j)
 {
 }
 

@@ -21,3 +21,13 @@ void Ente::setGG(Gerenciador_Grafico* g)
 {
 	GG = g;
 }
+
+const Vector2f Ente::getTamanho() const
+{
+	return Vector2f(sprite.getLocalBounds().width, sprite.getLocalBounds().height);
+}
+
+const Vector2f Ente::getPosicao() const
+{
+	return sprite.getPosition();
+}

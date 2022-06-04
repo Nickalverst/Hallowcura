@@ -2,14 +2,15 @@
 
 Olho::Olho(Vector2f pos) :
 	Inimigo(pos),
-    velocidadeVoo(15),
-    alturaVoo(500)
+    velocidadeVoo(10),
+    alturaVoo(pos.y)
 {
     if (!tex.loadFromFile("assets/olho_idle.png"))
     {
         cerr << "Erro ao carregar a textura do zumbi. " << endl;
     }
 
+    gravidade = 0.25f;
     sprite.setTexture(tex);
     sprite.setOrigin(Vector2f((float)tex.getSize().x / 2, (float)tex.getSize().y));
     sprite.scale(Vector2f(SIZE, SIZE));
@@ -24,7 +25,6 @@ void Olho::executar()
     // Gravidade
     if (sprite.getPosition().y + sprite.getLocalBounds().height < alturaChao) // Objeto está no ar
     {
-        cout << "Tamanho y da textura: " << sprite.getPosition().y << endl;
         velocidade.y += gravidade;
     }
     else // Objeto está no chão
