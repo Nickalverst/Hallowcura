@@ -24,6 +24,12 @@ void Gerenciador_Grafico::desenhar(Fase* f)
 	
 	f->imprimirEntidades();
 
+	RectangleShape rec;
+	rec.setSize(Vector2f(5, 5));
+	rec.setPosition(500.f, 800.f);
+	rec.setFillColor(Color::Blue);
+	window.draw(rec);
+
 	window.display();
 }
 
