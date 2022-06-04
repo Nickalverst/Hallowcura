@@ -4,8 +4,7 @@
 #include <stack>
 
 Fase_1_Floresta::Fase_1_Floresta(Gerenciador_Grafico* g, Jogador* j) :
-	Fase(j),
-	GG(g)
+	Fase(g, j)
 {
 	// Fundo de tela
 	if (!tex.loadFromFile("assets/floresta.png"))
@@ -25,12 +24,13 @@ Fase_1_Floresta::~Fase_1_Floresta()
 void Fase_1_Floresta::executar()
 {
 	LE.executar();
+	GC.Colisao();
 }
 
 void Fase_1_Floresta::criarEntidades()
 {
 	// Quantidades dos inimigos
-	srand(time(0));
+	srand((unsigned int) time(0));
 	int n_zumbis = (rand() % 6 / 2) + 3;
 	int n_olhos = (rand() % 6 / 2) + 3;
 
@@ -62,7 +62,7 @@ void Fase_1_Floresta::criarEntidades()
 		aux->setGG(GG);
 		posicoesZumbi.pop();
 		LE.inserir(static_cast<Entidade*>(aux));
-		//GC.inserir(static_cast<Inimigo*>(aux));
+		GC.inserirInimigo(static_cast<Inimigo*>(aux));
 	}
 
 	// Criar OlhoAlado
@@ -72,6 +72,6 @@ void Fase_1_Floresta::criarEntidades()
 		aux->setGG(GG);
 		posicoesOlho.pop();
 		LE.inserir(static_cast<Entidade*>(aux));
-		//GC.inserir(static_cast<Inimigo*>(aux));
+		GC.inserirInimigo(static_cast<Inimigo*>(aux));
 	}
 }

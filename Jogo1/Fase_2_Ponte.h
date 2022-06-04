@@ -6,7 +6,7 @@ class Fase_2_Ponte :
 private:
 
 public:
-    Fase_2_Ponte();
+    Fase_2_Ponte(Gerenciador_Grafico* g, Jogador* j);
     ~Fase_2_Ponte();
 
     virtual void executar();

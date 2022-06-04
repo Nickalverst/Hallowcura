@@ -1,8 +1,10 @@
 #include "Fase.h"
 
-Fase::Fase(Jogador* j):
+Fase::Fase(Gerenciador_Grafico* g, Jogador* j):
 	Ente(),
 	LE(),
+	GG(g),
+	GC(j),
 	jogador(j)
 {
 }
