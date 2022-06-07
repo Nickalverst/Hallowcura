@@ -1,5 +1,5 @@
 #include "Gerenciador_Grafico.h"
-
+// explicar namespaces
 Gerenciador_Grafico::Gerenciador_Grafico():
 	window(VideoMode(1600, 900), "Game title!")
 {

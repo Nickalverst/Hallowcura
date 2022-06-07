@@ -3,7 +3,9 @@
 class Inimigo :
     public Personagem
 {
-private:
+protected:
+    float raioPatrulha;
+    float pontoInicial;
 
 public:
     Inimigo(Vector2f position);

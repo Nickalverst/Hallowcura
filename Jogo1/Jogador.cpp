@@ -2,7 +2,7 @@
 
 Jogador::Jogador(Vector2f position) :
     Personagem(position),
-    velocidadePulo(15.f),
+    velocidadePulo(17.5f),
     pulando(false)
 {
     if (!tex.loadFromFile("assets/jogador_idle.png"))

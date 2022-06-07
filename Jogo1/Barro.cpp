@@ -1,8 +1,17 @@
 #include "Barro.h"
 
-Barro::Barro() :
+Barro::Barro(Vector2f pos) :
 	ObstaculoDeslizante(-1.f)
 {
+    sprite.setPosition(pos);
+    if (!tex.loadFromFile("assets/barro.png"))
+    {
+        cerr << "Erro ao carregar a textura do barro. " << endl;
+    }
+
+    sprite.setTexture(tex);
+    sprite.setOrigin(Vector2f((float)tex.getSize().x / 2, (float)tex.getSize().y));
+    sprite.scale(Vector2f(SIZE, SIZE));
 }
 
 Barro::~Barro()

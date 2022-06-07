@@ -3,6 +3,7 @@
 #include "ListaEntidades.h"
 #include "Jogador.h"
 #include "Gerenciador_Colisao.h"
+using namespace Gerenciadores;
 
 class Fase:
 	public Ente

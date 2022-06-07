@@ -6,7 +6,7 @@ class Barro :
 private:
 
 public:
-    Barro();
+    Barro(Vector2f pos);
     ~Barro();
 
     virtual void executar();

@@ -13,10 +13,9 @@ Fase_1_Floresta::Fase_1_Floresta(Gerenciador_Grafico* g, Jogador* j) :
 	}
 
 	sprite.setTexture(tex);
+	sprite.scale(Vector2f(SIZE, SIZE));
 
 	criarEntidades();
-
-
 }
 
 Fase_1_Floresta::~Fase_1_Floresta()
@@ -33,46 +32,60 @@ void Fase_1_Floresta::criarEntidades()
 {
 	// Quantidades dos inimigos
 	srand((unsigned int) time(0));
-	int n_zumbis = (rand() % 6 / 2) + 3;
-	int n_olhos = (rand() % 6 / 2) + 3;
+	int n_zumbis = (rand() % 3) + 3;
+	int n_olhos = (rand() % 3) + 3;
+	int n_obstaculos = (rand() % 5) + 3;
 
 	// Possíveis posições de spawn do zumbi
-	stack<Vector2f> posicoesZumbi;
+	vector<Vector2f> posicoesZumbi;
 	
-	posicoesZumbi.push(Vector2f(700, 800));
-	posicoesZumbi.push(Vector2f(100, 800));
-	posicoesZumbi.push(Vector2f(300, 800));
-	posicoesZumbi.push(Vector2f(1100, 800));
-	posicoesZumbi.push(Vector2f(500, 800));
-	posicoesZumbi.push(Vector2f(900, 800));
-	
+	posicoesZumbi.push_back(Vector2f(700, 800));
+	posicoesZumbi.push_back(Vector2f(100, 800));
+	posicoesZumbi.push_back(Vector2f(300, 800));
+	posicoesZumbi.push_back(Vector2f(1100, 800));
+	posicoesZumbi.push_back(Vector2f(500, 800));
+	posicoesZumbi.push_back(Vector2f(900, 800));
 
 	// Possíveis posições de spawn do olho
-	stack<Vector2f> posicoesOlho;
-	posicoesOlho.push(Vector2f(300, 300));
-	posicoesOlho.push(Vector2f(500, 300));
-	posicoesOlho.push(Vector2f(700, 300));
-	posicoesOlho.push(Vector2f(900, 300));
-	posicoesOlho.push(Vector2f(1100, 300));
-	posicoesOlho.push(Vector2f(1300, 300));
+	vector<Vector2f> posicoesOlho;
 
-	cout << "Zumbis: " << n_zumbis << ". Olhos: " << n_olhos << endl;
+	posicoesOlho.push_back(Vector2f(300, 300));
+	posicoesOlho.push_back(Vector2f(500, 300));
+	posicoesOlho.push_back(Vector2f(700, 300));
+	posicoesOlho.push_back(Vector2f(900, 300));
+	posicoesOlho.push_back(Vector2f(1100, 300));
+	posicoesOlho.push_back(Vector2f(1300, 300));
 
+	// Possíveis posições de spawn do olho
+	vector<Vector2f> posicoesObstaculos;
+
+	posicoesObstaculos.push_back(Vector2f(300, 900 - 42));
+	posicoesObstaculos.push_back(Vector2f(500, 900 - 42));
+	posicoesObstaculos.push_back(Vector2f(700, 900 - 42));
+	posicoesObstaculos.push_back(Vector2f(900, 900 - 42));
+	posicoesObstaculos.push_back(Vector2f(1100, 900 - 42));
+	posicoesObstaculos.push_back(Vector2f(1300, 900 - 42));
+
+	cout << "Número de zumbis: " << n_zumbis << ". Número de olhos: " << n_olhos << endl;
+
+	// Criar zumbis
 	for (int i = 0; i < n_zumbis; i++)
 	{	
-		Zumbi* aux = new Zumbi(posicoesZumbi.top());
+		int pos = rand() % posicoesZumbi.size();
+		Zumbi* aux = new Zumbi(posicoesZumbi[pos]);
 		aux->setGG(GG);
-		posicoesZumbi.pop();
+		posicoesZumbi.erase(posicoesZumbi.begin() + pos);
 		LE.inserir(static_cast<Entidade*>(aux));
 		GC.inserirInimigo(static_cast<Inimigo*>(aux));
 	}
 
-	// Criar OlhoAlado
+	// Criar olhos alados
 	for (int i = 0; i < n_olhos; i++)
 	{
-		Olho* aux = new Olho(posicoesOlho.top());
+		int pos = rand() % posicoesZumbi.size();
+		Olho* aux = new Olho(posicoesOlho[pos]);
 		aux->setGG(GG);
-		posicoesOlho.pop();
+		posicoesOlho.erase(posicoesOlho.begin() + pos);
 		LE.inserir(static_cast<Entidade*>(aux));
 		GC.inserirInimigo(static_cast<Inimigo*>(aux));
 		
@@ -82,5 +95,16 @@ void Fase_1_Floresta::criarEntidades()
 		LE.inserir(static_cast<Entidade*>(tiro));
 		tiro->setGG(GG);
 		GC.inserirProjetil(tiro);
+	}
+
+	// Criar obstáculos
+	for (int i = 0; i < n_obstaculos; i++)
+	{
+		int pos = rand() % posicoesObstaculos.size();
+		Barro* aux = new Barro(posicoesObstaculos[pos]);
+		aux->setGG(GG);
+		posicoesObstaculos.erase(posicoesObstaculos.begin() + pos);
+		LE.inserir(static_cast<Entidade*>(aux));
+		GC.inserirObstaculo(static_cast<Obstaculo*>(aux));
 	}
 }

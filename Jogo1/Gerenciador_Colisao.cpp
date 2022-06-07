@@ -1,4 +1,5 @@
 #include "Gerenciador_Colisao.h"
+using Gerenciadores::Gerenciador_Colisao;
 
 Gerenciador_Colisao::Gerenciador_Colisao(Jogador* j1) :
     LIs(),

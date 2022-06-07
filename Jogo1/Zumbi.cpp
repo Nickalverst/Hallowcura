@@ -1,10 +1,11 @@
 #include "Zumbi.h"
 
-Zumbi::Zumbi(Vector2f pos):
-	Inimigo(pos),
-    raioPatrulha(300),
-    pontoInicial(pos.x)
+Zumbi::Zumbi(Vector2f pos) :
+    Inimigo(pos)
 {
+    raioPatrulha = 300;
+    pontoInicial = pos.x;
+
     if (!tex.loadFromFile("assets/zumbi_andando.png"))
     {
         cerr << "Erro ao carregar a textura do zumbi. " << endl;

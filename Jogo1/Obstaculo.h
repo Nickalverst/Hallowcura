@@ -4,7 +4,7 @@ class Obstaculo :
     public Entidade
 {
 protected:
-
+    int dano;
 public:
     Obstaculo();
     ~Obstaculo();

@@ -1,7 +1,8 @@
 #include "Obstaculo.h"
 
 Obstaculo::Obstaculo() :
-	Entidade()
+	Entidade(),
+	dano(0)
 {
 }
 
