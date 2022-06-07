@@ -64,7 +64,10 @@ void Fase_1_Floresta::criarEntidades()
 	posicoesObstaculos.push_back(Vector2f(700, 900 - 42));
 	posicoesObstaculos.push_back(Vector2f(900, 900 - 42));
 	posicoesObstaculos.push_back(Vector2f(1100, 900 - 42));
+	posicoesObstaculos.push_back(Vector2f(800, 900 - 42));
+	posicoesObstaculos.push_back(Vector2f(1150, 900 - 42));
 	posicoesObstaculos.push_back(Vector2f(1300, 900 - 42));
+	posicoesObstaculos.push_back(Vector2f(1500, 900 - 42));
 
 	cout << "Número de zumbis: " << n_zumbis << ". Número de olhos: " << n_olhos << endl;
 

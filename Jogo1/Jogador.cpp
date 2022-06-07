@@ -3,6 +3,7 @@
 Jogador::Jogador(Vector2f position) :
     Personagem(position),
     velocidadePulo(17.5f),
+    velocidadeCambaleio(5.f),
     pulando(false)
 {
     if (!tex.loadFromFile("assets/jogador_idle.png"))
@@ -120,4 +121,17 @@ void Jogador::pular()
     sprite.setTexture(jogador_pulando);
     velocidade.y = -velocidadePulo;
     pulando = true;
+}
+
+
+
+void Jogador::tomarDano(float difPosX, int dano)
+{
+    (difPosX > 0) ? velocidade.x = -velocidadeCambaleio : velocidade.x = velocidadeCambaleio; // Velocidade oposta ao inimigo
+    operator--(dano);
+}
+
+void Jogador::operator--(int dano)
+{
+    num_vidas -= dano;
 }

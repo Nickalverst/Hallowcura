@@ -23,19 +23,7 @@ void Gerenciador_Colisao::Colisao()
         if (abs(difPosX) <= SIZE*((*it)->getTamanho().x / 2 + j1->getTamanho().x / 2) &&
             abs(difPosY) <= SIZE*((*it)->getTamanho().y / 2 + j1->getTamanho().y / 2))
         {
-            cout << "Colisão com inimigo detectada. " << endl;
-            //(*it)->atacar();
-            // j1->tomarDano(difPosX); tirar vida e dar stagger
-            /* Dentro da função tomar dano :
-                if (difPosX > 0)
-                {
-                    cout << "Bateu pela esquerda. " << endl;
-                }
-                else
-                {
-                    cout << "Bateu pela direita. " << endl;
-                }
-            */
+            (*it)->atacar(j1, difPosX);
         }
     }
 
