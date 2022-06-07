@@ -1,14 +1,16 @@
 #pragma once
 #include "Entidade.h"
+#include "Jogador.h"
+
 class Obstaculo :
     public Entidade
 {
 protected:
     int dano;
 public:
-    Obstaculo();
+    Obstaculo(int dano = 0);
     ~Obstaculo();
 
     virtual void executar() = 0;
+    void afetarJogador(Jogador* j);
 };
-

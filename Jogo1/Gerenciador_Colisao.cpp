@@ -35,7 +35,9 @@ void Gerenciador_Colisao::Colisao()
         if (abs(difPosX) <= SIZE * ((*it)->getTamanho().x / 2 + j1->getTamanho().x / 2) &&
             abs(difPosY) <= SIZE * ((*it)->getTamanho().y / 2 + j1->getTamanho().y / 2))
         {
-            cout << "Colisão com obstáculo detectada. " << endl;
+            (*it)->afetarJogador(j1);
+            
+            dynamic_cast<ObstaculoDeslizante*>(*it)->aplicarDeslize(j1);
         }
     }
 

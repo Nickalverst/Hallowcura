@@ -18,7 +18,9 @@ public:
     virtual void executar();
     void pular();
 
-    void tomarDano(float difPosX, int dano);
+    void tomarDano(int dano, float difPosX = 0);
     void operator--(int dano);
+
+    void aplicarDeslize(float taxa);
 };
 

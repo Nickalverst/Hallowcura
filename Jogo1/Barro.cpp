@@ -1,7 +1,7 @@
 #include "Barro.h"
 
 Barro::Barro(Vector2f pos) :
-	ObstaculoDeslizante(-1.f)
+	ObstaculoDeslizante(0.95f)
 {
     sprite.setPosition(pos);
     if (!tex.loadFromFile("assets/barro.png"))

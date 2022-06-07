@@ -1,11 +1,16 @@
 #include "Obstaculo.h"
 
-Obstaculo::Obstaculo() :
+Obstaculo::Obstaculo(int dano) :
 	Entidade(),
-	dano(0)
+	dano(dano)
 {
 }
 
 Obstaculo::~Obstaculo()
 {
+}
+
+void Obstaculo::afetarJogador(Jogador* j)
+{
+	j->tomarDano(dano);
 }

@@ -3,6 +3,7 @@
 #include <list>
 #include "Inimigo.h"
 #include "Obstaculo.h"
+#include "ObstaculoDeslizante.h"
 #include "Jogador.h"
 #include "Laser.h"
 

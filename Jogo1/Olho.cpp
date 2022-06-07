@@ -3,7 +3,8 @@
 Olho::Olho(Vector2f pos) :
 	Inimigo(pos),
     velocidadeVoo(10),
-    alturaVoo(pos.y)
+    alturaVoo(pos.y),
+    laser()
 {
     raioPatrulha = 300;
     pontoInicial = pos.x;

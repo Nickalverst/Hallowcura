@@ -123,15 +123,19 @@ void Jogador::pular()
     pulando = true;
 }
 
-
-
-void Jogador::tomarDano(float difPosX, int dano)
+void Jogador::tomarDano(int dano, float difPosX)
 {
-    (difPosX > 0) ? velocidade.x = -velocidadeCambaleio : velocidade.x = velocidadeCambaleio; // Velocidade oposta ao inimigo
+    if (difPosX > 0) velocidade.x = -velocidadeCambaleio;
+    else if (difPosX < 0) velocidade.x = velocidadeCambaleio; // Velocidade oposta ao inimigo
     operator--(dano);
 }
 
 void Jogador::operator--(int dano)
 {
     num_vidas -= dano;
+}
+
+void Jogador::aplicarDeslize(float taxa)
+{
+    velocidade.x *= taxa;
 }
