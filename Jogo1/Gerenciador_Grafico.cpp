@@ -37,6 +37,13 @@ void Gerenciador_Grafico::desenhar(Sprite s)
 	window.draw(s);
 }
 
+void Gerenciador_Grafico::desenhar(Text t)
+{
+	//window.clear();
+	window.draw(t);
+	window.display();
+}
+
 const bool Gerenciador_Grafico::isOpen() const
 {
 	return window.isOpen();

@@ -3,10 +3,12 @@
 Jogo::Jogo() :
     GG(),
     jogador(Vector2f(500.f, 800.f)),
-    fase1(&GG, &jogador)
+    fase1(&GG, &jogador),
+    menu(&GG, &fase1)
 {
     fase1.setGG(&GG);
     jogador.setGG(&GG);
+    menu.setGG(&GG);
 
     fase1.incluirEntidades(&jogador);
     executar();
@@ -26,9 +28,9 @@ void Jogo::executar()
             if (event.type == Event::Closed)
                 GG.getWindow()->close();
         }
-
-        fase1.executar();
-        GG.desenhar(static_cast<Fase*>(&fase1));
+        menu.executar();
+        //fase1.executar();
+        //GG.desenhar(static_cast<Fase*>(&fase1));
     }
 }
 

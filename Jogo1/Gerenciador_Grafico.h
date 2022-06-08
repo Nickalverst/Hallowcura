@@ -16,6 +16,7 @@ public:
 	void desenhar(Fase* f);
 	void desenhar(RectangleShape b);
 	void desenhar(Sprite s);
+	void desenhar(Text t);
 
 	RenderWindow* getWindow() { return &window; };
 
