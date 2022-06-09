@@ -18,7 +18,7 @@ Menu::Menu() :
 	}
 	
 	menu[0].setFont(fonte);
-	menu[0].setFillColor(Color::Black);
+	menu[0].setFillColor(Color::White);
 	menu[0].setString("Jogar fase 1");
 	menu[0].setOrigin(menu[0].getLocalBounds().width/2, menu[0].getLocalBounds().height/2);
 	menu[0].setPosition(Vector2f(800, 400));

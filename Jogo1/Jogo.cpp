@@ -55,8 +55,8 @@ void Jogo::executar()
                             cout << "Ranking. " << endl;
                             break;
                         case 3:
-                            estadoAtual = "sair";
-                            cout << "Clicou fechar. " << endl;
+                            cout << "SAIR: Encerrando... " << endl;
+                            exit(0);
                             break;
                         }
                         break;
@@ -71,12 +71,15 @@ void Jogo::executar()
                     GG.getWindow()->close();
                     break;
             }
-  
         }
 
         if (!pausado)
         {
-            if (estadoAtual == "fase1")
+            if (estadoAtual == "menu")
+            {
+                GG.desenhar(&menu);
+            }
+            else if (estadoAtual == "fase1")
             {
                 fase1.executar();
                 GG.desenhar(static_cast<Fase*>(&fase1));
@@ -85,10 +88,6 @@ void Jogo::executar()
             {
                 fase2.executar();
                 GG.desenhar(static_cast<Fase*>(&fase2));
-            }
-            else if (estadoAtual == "menu")
-            {
-                GG.desenhar(&menu);
             }
         }
     }
