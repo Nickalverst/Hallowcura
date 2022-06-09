@@ -27,6 +27,21 @@ void Gerenciador_Grafico::desenhar(Fase* f)
 	window.display();
 }
 
+void Gerenciador_Grafico::desenhar(Menu* m)
+{
+	window.clear();
+
+	m->imprimir_se();
+
+	Text *t = m->getMenu();
+	for (int i = 0; i < m->getMaxItens(); i++)
+	{
+		window.draw(t[i]);
+	}
+
+	window.display();
+}
+
 void Gerenciador_Grafico::desenhar(RectangleShape body)
 {
 	window.draw(body);

@@ -160,6 +160,7 @@
     <ClCompile Include="Laser.cpp" />
     <ClCompile Include="ListaEntidades.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Obstaculo.cpp" />
     <ClCompile Include="ObstaculoDeslizante.cpp" />
     <ClCompile Include="Oleo.cpp" />
@@ -184,6 +185,7 @@
     <ClInclude Include="Laser.h" />
     <ClInclude Include="Lista.h" />
     <ClInclude Include="ListaEntidades.h" />
+    <ClInclude Include="Menu.h" />
     <ClInclude Include="Obstaculo.h" />
     <ClInclude Include="ObstaculoDeslizante.h" />
     <ClInclude Include="Oleo.h" />

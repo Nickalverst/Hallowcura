@@ -45,7 +45,7 @@ void Elemento<TE>::setProximo(Elemento<TE>* pp)
     }
     else
     {
-        cerr << "Erro: ponteiro nulo. Origem da mensagem: \"Elemento.h\". " << endl;
+        cerr << "Erro: ponteiro nulo. Origem da mensagem: setProximo de \"Elemento.h\". " << endl;
     }
 }
 
@@ -64,7 +64,7 @@ void Elemento<TE>::setInfo(TE* pi)
     }
     else
     {
-        cerr << "Erro: ponteiro nulo. Origem da mensagem: \"Elemento.h\". " << endl;
+        cerr << "Erro: ponteiro nulo. Origem da mensagem: setInfo de \"Elemento.h\". " << endl;
     }
 }
 

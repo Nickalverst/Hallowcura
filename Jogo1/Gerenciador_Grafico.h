@@ -2,6 +2,7 @@
 #include "ListaEntidades.h"
 #include "Entidade.h"
 #include "Fase.h"
+#include "Menu.h"
 
 class Gerenciador_Grafico
 {
@@ -14,6 +15,7 @@ public:
 
 	void desenhar(Entidade* e);
 	void desenhar(Fase* f);
+	void desenhar(Menu* m);
 	void desenhar(RectangleShape b);
 	void desenhar(Sprite s);
 
