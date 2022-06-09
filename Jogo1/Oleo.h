@@ -6,7 +6,7 @@ class Oleo :
 private:
 
 public:
-    Oleo();
+    Oleo(Vector2f pos);
     ~Oleo();
 
     virtual void executar();

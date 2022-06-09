@@ -3,6 +3,7 @@
 #include "Zumbi.h"
 #include "Olho.h"
 #include "Barro.h"
+#include "Plataforma.h"
 
 class Fase_1_Floresta :
     public Fase

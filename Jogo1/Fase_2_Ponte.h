@@ -1,5 +1,10 @@
 #pragma once
 #include "Fase.h"
+#include "Zumbi.h"
+#include "Olho.h"
+#include "Oleo.h"
+#include "UFO.h"
+
 class Fase_2_Ponte :
     public Fase
 {
@@ -10,5 +15,7 @@ public:
     ~Fase_2_Ponte();
 
     virtual void executar();
+    
+    void criarEntidades();
 };
 

@@ -68,3 +68,4 @@ void Gerenciador_Colisao::inserirProjetil(Laser* las)
 {
     LPs.push_back(las);
 }
+
