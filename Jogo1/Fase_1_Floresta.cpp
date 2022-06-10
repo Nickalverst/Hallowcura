@@ -27,6 +27,24 @@ void Fase_1_Floresta::executar()
 
 void Fase_1_Floresta::criarEntidades()
 {
+	// Criar plataformas
+	vector<Vector2f> posicaoPlataforma;
+
+	posicaoPlataforma.push_back(Vector2f(200 * 4, 153 * 4));
+	posicaoPlataforma.push_back(Vector2f(62  * 4, 153 * 4));
+	posicaoPlataforma.push_back(Vector2f(337 * 4, 153 * 4));
+	posicaoPlataforma.push_back(Vector2f(128 * 4, 89  * 4));
+	posicaoPlataforma.push_back(Vector2f(272 * 4, 89  * 4));
+	posicaoPlataforma.push_back(Vector2f(200 * 4, 89  * 4));
+
+	for (int i = 0; i < 6; i++)
+	{
+		Plataforma* aux = new Plataforma(posicaoPlataforma[i], 1);//5-4-4-2-2-1
+		aux->setGG(GG);
+		LE.inserir(static_cast<Entidade*>(aux));
+		GC.inserirObstaculo(static_cast<Obstaculo*>(aux));
+	}
+
 	int n_obstaculos = (rand() % 5) + 3;
 
 	// Possíveis posições de spawn dos obstaculos
