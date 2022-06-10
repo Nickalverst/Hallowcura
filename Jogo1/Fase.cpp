@@ -7,7 +7,7 @@ Fase::Fase(Gerenciador_Grafico* g, Jogador* j):
 	GC(j),
 	jogador(j)
 {
-	criarEntidades();
+	//criarEntidades();
 }
 
 Fase::~Fase()
