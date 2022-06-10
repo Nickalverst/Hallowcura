@@ -5,6 +5,7 @@
 #include "ListaEntidades.h"
 #include "Fase_1_Floresta.h"
 #include "Menu.h"
+#include "Inimigo.h"
 #include "Fase_2_Ponte.h"
 
 class Jogo

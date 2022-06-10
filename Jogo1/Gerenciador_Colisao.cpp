@@ -1,5 +1,6 @@
 #include "Gerenciador_Colisao.h"
 using Gerenciadores::Gerenciador_Colisao;
+#include "Fase.h"
 
 Gerenciador_Colisao::Gerenciador_Colisao(Jogador* j1) :
     LIs(),
@@ -13,7 +14,7 @@ Gerenciador_Colisao::~Gerenciador_Colisao()
 {
 }
 
-void Gerenciador_Colisao::Colisao()
+void Gerenciador_Colisao::Colisao(Fase* f)
 {
     // Colisões com inimigos
     for (vector<Inimigo*>::iterator it = LIs.begin(); it != LIs.end(); it++)
@@ -36,8 +37,6 @@ void Gerenciador_Colisao::Colisao()
             abs(difPosY) <= SIZE * ((*it)->getTamanho().y / 2 + j1->getTamanho().y / 2))
         {
             (*it)->afetarJogador(j1);
-            
-            dynamic_cast<ObstaculoDeslizante*>(*it)->aplicarDeslize(j1);
         }
     }
 
@@ -49,6 +48,8 @@ void Gerenciador_Colisao::Colisao()
         if (abs(difPosX) <= SIZE * ((*it)->getTamanho().x / 2 + j1->getTamanho().x / 2) &&
             abs(difPosY) <= SIZE * ((*it)->getTamanho().y / 2 + j1->getTamanho().y / 2))
         {
+            j1->operator--(10);
+            f->removerEntidade(static_cast<Entidade*>(*it));
             cout << "Colisão com projétil detectada. " << endl;
         }
     }

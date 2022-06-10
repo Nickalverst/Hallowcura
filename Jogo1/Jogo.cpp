@@ -2,7 +2,7 @@
 
 Jogo::Jogo() :
     GG(),
-    jogador(Vector2f(500.f, 800.f)),
+    jogador(Vector2f(50.f, 800.f)),
     fase1(&GG, &jogador),
     fase2(&GG, &jogador),
     menu(),
@@ -11,9 +11,11 @@ Jogo::Jogo() :
 {
     menu.setGG(&GG);
     fase1.setGG(&GG);
+    fase2.setGG(&GG);
     jogador.setGG(&GG);
 
-    fase1.incluirEntidades(&jogador);
+    fase1.incluirEntidade(&jogador);
+    fase2.incluirEntidade(&jogador);
     executar();
 }
 
@@ -83,11 +85,13 @@ void Jogo::executar()
             {
                 fase1.executar();
                 GG.desenhar(static_cast<Fase*>(&fase1));
+                if (Inimigo::getContadorInimigos() == 0) estadoAtual = "fase2";
             }
             else if (estadoAtual == "fase2")
             {
                 fase2.executar();
                 GG.desenhar(static_cast<Fase*>(&fase2));
+                if (Inimigo::getContadorInimigos() == 0) estadoAtual = "menu";
             }
         }
     }

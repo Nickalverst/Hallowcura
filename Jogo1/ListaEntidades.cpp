@@ -26,7 +26,28 @@ void ListaEntidades::inserir(Entidade* e)
 
 void ListaEntidades::remover(Entidade* e)
 {
-	// Iterator? Esta função será usada para remover objetos que forem destruídos
+	Elemento<Entidade>* itr = LEs.getPrimeiro();
+	if (e != nullptr)
+	{
+		while (itr != LEs.getUltimo() && itr->getProximo()->getProximo() != nullptr)
+		{
+			if (itr->getProximo()->getInfo() == e)
+			{
+				Elemento<Entidade>* aux = itr->getProximo()->getProximo();
+				delete(itr->getProximo());
+				delete(e);
+				itr->setProximo(aux);
+					
+				return;
+			}
+
+			itr = itr->getProximo();
+		}
+	}
+	else
+	{
+		cerr << "Erro: ponteiro para entidade é nulo." << endl;
+	}
 }
 
 void ListaEntidades::imprimir()

@@ -20,6 +20,7 @@ public:
 
     void tomarDano(int dano, float difPosX = 0);
     void operator--(int dano);
+    void operator++(int vida);
 
     void aplicarDeslize(float taxa);
 };

@@ -21,7 +21,7 @@ void Gerenciador_Grafico::desenhar(Fase* f)
 	window.clear();
 
 	f->imprimir_se();
-	
+
 	f->imprimirEntidades();
 
 	window.display();

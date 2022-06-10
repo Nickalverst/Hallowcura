@@ -9,8 +9,3 @@ Obstaculo::Obstaculo(int dano) :
 Obstaculo::~Obstaculo()
 {
 }
-
-void Obstaculo::afetarJogador(Jogador* j)
-{
-	j->tomarDano(dano);
-}

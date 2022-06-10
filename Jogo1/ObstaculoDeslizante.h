@@ -13,6 +13,7 @@ public:
 
     virtual void executar() = 0;
 
+    virtual void afetarJogador(Jogador* j);
     void aplicarDeslize(Jogador* j);
 };
 

@@ -12,5 +12,5 @@ public:
     ~Obstaculo();
 
     virtual void executar() = 0;
-    void afetarJogador(Jogador* j);
+    virtual void afetarJogador(Jogador* j) = 0;
 };

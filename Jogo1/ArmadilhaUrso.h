@@ -7,7 +7,10 @@ class ArmadilhaUrso :
 private:
 
 public:
-    ArmadilhaUrso();
+    ArmadilhaUrso(Vector2f pos);
     ~ArmadilhaUrso();
+
+    virtual void executar();
+    virtual void afetarJogador(Jogador* j);
 };
 

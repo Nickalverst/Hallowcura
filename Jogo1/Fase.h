@@ -3,6 +3,11 @@
 #include "ListaEntidades.h"
 #include "Jogador.h"
 #include "Gerenciador_Colisao.h"
+#include "ArmadilhaUrso.h"
+#include "Zumbi.h"
+#include "Olho.h"
+#include <cstdlib>
+#include <time.h>
 using namespace Gerenciadores;
 
 class Fase:
@@ -20,6 +25,8 @@ public:
 
 	void imprimirEntidades();
 	virtual void executar() = 0;
-	void incluirEntidades(Entidade* e);
+	void incluirEntidade(Entidade* e);
+	void removerEntidade(Entidade* e);
+	void criarEntidades();
 };
 

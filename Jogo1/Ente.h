@@ -22,6 +22,7 @@ public:
 	virtual void executar() = 0;
 	void imprimir_se();
 
+	const int getID() const { return id; }
 	void setGG(Gerenciador_Grafico* g);
 	const Vector2f getTamanho() const;
 	const Vector2f getPosicao() const;

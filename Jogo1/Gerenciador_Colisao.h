@@ -6,6 +6,7 @@
 #include "ObstaculoDeslizante.h"
 #include "Jogador.h"
 #include "Laser.h"
+class Fase;
 
 namespace Gerenciadores
 {
@@ -21,7 +22,7 @@ namespace Gerenciadores
         Gerenciador_Colisao(Jogador* j1);
         ~Gerenciador_Colisao();
 
-        void Colisao();
+        void Colisao(Fase* f);
 
         void inserirInimigo(Inimigo* ini);
         void inserirObstaculo(Obstaculo* obs);

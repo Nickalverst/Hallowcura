@@ -18,6 +18,7 @@ Jogador::Jogador(Vector2f position) :
         cerr << "Erro ao carregar texturas do jogador. " << endl;
     }
 
+    num_vidas = 100;
     sprite.setTexture(tex);
     sprite.setOrigin(Vector2f((float) tex.getSize().x/2, (float) tex.getSize().y));
     sprite.scale(Vector2f(SIZE, SIZE));
@@ -55,13 +56,6 @@ void Jogador::executar()
         velocidade.x += desaceleracao;
     }
 
-    // Movimento para baixo
-    if (Keyboard::isKeyPressed(Keyboard::S) ||
-        Keyboard::isKeyPressed(Keyboard::Down))
-    {
-
-    }
-
     // Movimento para a direita
     if (Keyboard::isKeyPressed(Keyboard::D) ||
         Keyboard::isKeyPressed(Keyboard::Right))
@@ -80,10 +74,11 @@ void Jogador::executar()
         velocidade.x -= desaceleracao;
     }
 
-    if (Keyboard::isKeyPressed(Keyboard::Space))
+    if (Keyboard::isKeyPressed(Keyboard::F))
     {
-
+        
     }
+
     if (Keyboard::isKeyPressed(Keyboard::Enter))
     {
 
@@ -133,6 +128,11 @@ void Jogador::tomarDano(int dano, float difPosX)
 void Jogador::operator--(int dano)
 {
     num_vidas -= dano;
+}
+
+void Jogador::operator++(int vida)
+{
+    num_vidas += vida;
 }
 
 void Jogador::aplicarDeslize(float taxa)
