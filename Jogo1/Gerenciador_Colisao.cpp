@@ -21,8 +21,8 @@ void Gerenciador_Colisao::Colisao(Fase* f)
     {
         float difPosX = (*it)->getPosicao().x - j1->getPosicao().x;
         float difPosY = (*it)->getPosicao().y - j1->getPosicao().y;
-        if (abs(difPosX) <= SIZE*((*it)->getTamanho().x / 2 + j1->getTamanho().x / 2) &&
-            abs(difPosY) <= SIZE*((*it)->getTamanho().y / 2 + j1->getTamanho().y / 2))
+        if (abs(difPosX) <= ((*it)->getTamanho().x / 2 + j1->getTamanho().x / 2) &&
+            abs(difPosY) <= ((*it)->getTamanho().y / 2 + j1->getTamanho().y / 2))
         {
             (*it)->atacar(j1, difPosX);
         }
@@ -33,10 +33,10 @@ void Gerenciador_Colisao::Colisao(Fase* f)
     {
         float difPosX = (*it)->getPosicao().x - j1->getPosicao().x;
         float difPosY = (*it)->getPosicao().y - j1->getPosicao().y;
-        if (abs(difPosX) <= SIZE * ((*it)->getTamanho().x / 2 + j1->getTamanho().x / 2) &&
-            abs(difPosY) <= SIZE * ((*it)->getTamanho().y / 2 + j1->getTamanho().y / 2))
+        if (abs(difPosX) <= ((*it)->getTamanho().x / 2 + j1->getTamanho().x / 2) &&
+            abs(difPosY) <= ((*it)->getTamanho().y / 2 + j1->getTamanho().y / 2))
         {
-            (*it)->afetarJogador(j1);
+            (*it)->afetarJogador(j1, Vector2f(difPosX, difPosY));
         }
     }
 
@@ -45,14 +45,16 @@ void Gerenciador_Colisao::Colisao(Fase* f)
     {
         float difPosX = (*it)->getPosicao().x - j1->getPosicao().x;
         float difPosY = (*it)->getPosicao().y - j1->getPosicao().y;
-        if (abs(difPosX) <= SIZE * ((*it)->getTamanho().x / 2 + j1->getTamanho().x / 2) &&
-            abs(difPosY) <= SIZE * ((*it)->getTamanho().y / 2 + j1->getTamanho().y / 2))
+        if (abs(difPosX) <= ((*it)->getTamanho().x / 2 + j1->getTamanho().x / 2) &&
+            abs(difPosY) <= ((*it)->getTamanho().y / 2 + j1->getTamanho().y / 2))
         {
             j1->operator--(10);
             f->removerEntidade(static_cast<Entidade*>(*it));
-            cout << "Colisão com projétil detectada. " << endl;
         }
     }
+
+    // Colisões dos inimigos com plataformas
+
 }
 
 void Gerenciador_Colisao::inserirInimigo(Inimigo* ini)

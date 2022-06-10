@@ -28,19 +28,19 @@ void Fase_1_Floresta::executar()
 void Fase_1_Floresta::criarEntidades()
 {
 	// Criar plataformas
-	vector<Vector2f> posicaoPlataforma;
+	vector<Vector3f> posicaoPlataforma;
 
-	posicaoPlataforma.push_back(Vector2f(200 * 4, 153 * 4));
-	posicaoPlataforma.push_back(Vector2f(62  * 4, 153 * 4));
-	posicaoPlataforma.push_back(Vector2f(337 * 4, 153 * 4));
-	posicaoPlataforma.push_back(Vector2f(128 * 4, 89  * 4));
-	posicaoPlataforma.push_back(Vector2f(272 * 4, 89  * 4));
-	posicaoPlataforma.push_back(Vector2f(200 * 4, 89  * 4));
+	posicaoPlataforma.push_back(Vector3f(1600 / 2, 900 - 32, 15));
+	posicaoPlataforma.push_back(Vector3f(200 * 4, 153 * 4, 5));
+	posicaoPlataforma.push_back(Vector3f(62  * 4, 153 * 4, 4));
+	posicaoPlataforma.push_back(Vector3f(337 * 4, 153 * 4, 4));
+	posicaoPlataforma.push_back(Vector3f(128 * 4, 89  * 4, 2));
+	posicaoPlataforma.push_back(Vector3f(272 * 4, 89  * 4, 2));
+	posicaoPlataforma.push_back(Vector3f(200 * 4, 89  * 4, 1));
 
-	for (int i = 0; i < 6; i++)
+	for (int i = 0; i < posicaoPlataforma.size(); i++)
 	{
-		Plataforma* aux = new Plataforma(posicaoPlataforma[i], 1);//5-4-4-2-2-1
-		aux->setGG(GG);
+		Plataforma* aux = new Plataforma(GG, posicaoPlataforma[i]);
 		LE.inserir(static_cast<Entidade*>(aux));
 		GC.inserirObstaculo(static_cast<Obstaculo*>(aux));
 	}

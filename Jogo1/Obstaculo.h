@@ -12,5 +12,5 @@ public:
     ~Obstaculo();
 
     virtual void executar() = 0;
-    virtual void afetarJogador(Jogador* j) = 0;
+    virtual void afetarJogador(Jogador* j, Vector2f deltaPos) = 0;
 };

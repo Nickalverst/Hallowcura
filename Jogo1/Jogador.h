@@ -23,5 +23,6 @@ public:
     void operator++(int vida);
 
     void aplicarDeslize(float taxa);
+    void corrigirPosicao(Vector2f pos);
 };
 

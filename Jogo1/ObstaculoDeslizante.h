@@ -13,7 +13,7 @@ public:
 
     virtual void executar() = 0;
 
-    virtual void afetarJogador(Jogador* j);
+    virtual void afetarJogador(Jogador* j, Vector2f deltaPos);
     void aplicarDeslize(Jogador* j);
 };
 

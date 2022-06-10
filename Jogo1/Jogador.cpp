@@ -20,7 +20,7 @@ Jogador::Jogador(Vector2f position) :
 
     num_vidas = 100;
     sprite.setTexture(tex);
-    sprite.setOrigin(Vector2f((float) tex.getSize().x/2, (float) tex.getSize().y));
+    sprite.setOrigin(Vector2f((float) tex.getSize().x/2, (float) tex.getSize().y / 2));
     sprite.scale(Vector2f(SIZE, SIZE));
 }
 
@@ -97,16 +97,7 @@ void Jogador::executar()
 
     sprite.move(velocidade);
 
-    // Gravidade
-    if (sprite.getPosition().y + sprite.getLocalBounds().height < alturaChao) // Objeto está no ar
-    {
-        velocidade.y += gravidade;
-    }
-    else // Objeto está no chão
-    {
-        sprite.setPosition(Vector2f(sprite.getPosition().x, alturaChao - sprite.getLocalBounds().height));
-        pulando = false;
-    }
+    velocidade.y += gravidade;
 
     if (pulando) sprite.setTexture(jogador_pulando);
 }
@@ -138,4 +129,14 @@ void Jogador::operator++(int vida)
 void Jogador::aplicarDeslize(float taxa)
 {
     velocidade.x *= taxa;
+}
+
+void Jogador::corrigirPosicao(Vector2f pos)
+{
+    if (velocidade.y > 0)
+    {
+        sprite.setPosition(pos);
+        velocidade.y = 0;
+        pulando = false;
+    }
 }

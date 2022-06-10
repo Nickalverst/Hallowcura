@@ -22,7 +22,7 @@ void ArmadilhaUrso::executar()
 {
 }
 
-void ArmadilhaUrso::afetarJogador(Jogador* j)
+void ArmadilhaUrso::afetarJogador(Jogador* j, Vector2f deltaPos)
 {
 	j->tomarDano(dano);
     cout << "tomou dano" << endl;

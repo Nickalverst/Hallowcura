@@ -11,7 +11,7 @@ ObstaculoDeslizante::~ObstaculoDeslizante()
 	taxaAtrito = 0.f;
 }
 
-void ObstaculoDeslizante::afetarJogador(Jogador* j)
+void ObstaculoDeslizante::afetarJogador(Jogador* j, Vector2f deltaPos)
 {
 	aplicarDeslize(j);
 }

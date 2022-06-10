@@ -11,6 +11,6 @@ public:
     ~ArmadilhaUrso();
 
     virtual void executar();
-    virtual void afetarJogador(Jogador* j);
+    virtual void afetarJogador(Jogador* j, Vector2f deltaPos);
 };
 
