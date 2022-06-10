@@ -28,15 +28,28 @@ void Gerenciador_Colisao::Colisao(Fase* f)
         }
     }
 
-    // Colisões com obstáculos
+    // Colisões de obstáculos
     for (list<Obstaculo*>::iterator it = LOs.begin(); it != LOs.end(); it++)
     {
+        // Com o jogador
         float difPosX = (*it)->getPosicao().x - j1->getPosicao().x;
         float difPosY = (*it)->getPosicao().y - j1->getPosicao().y;
         if (abs(difPosX) <= ((*it)->getTamanho().x / 2 + j1->getTamanho().x / 2) &&
             abs(difPosY) <= ((*it)->getTamanho().y / 2 + j1->getTamanho().y / 2))
         {
-            (*it)->afetarJogador(j1, Vector2f(difPosX, difPosY));
+            (*it)->afetarPersonagem(static_cast<Personagem*>(j1), Vector2f(difPosX, difPosY));
+        }
+
+        // Com inimigos
+        for (vector<Inimigo*>::iterator itIn = LIs.begin(); itIn != LIs.end(); itIn++)
+        {
+            float difPosX = (*it)->getPosicao().x - (*itIn)->getPosicao().x;
+            float difPosY = (*it)->getPosicao().y - (*itIn)->getPosicao().y;
+            if (abs(difPosX) <= ((*it)->getTamanho().x / 2 + (*itIn)->getTamanho().x / 2) &&
+                abs(difPosY) <= ((*it)->getTamanho().y / 2 + (*itIn)->getTamanho().y / 2))
+            {
+                (*it)->afetarPersonagem(static_cast<Personagem*>(*itIn), Vector2f(difPosX, difPosY));
+            }
         }
     }
 

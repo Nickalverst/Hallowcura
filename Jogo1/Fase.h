@@ -3,6 +3,7 @@
 #include "ListaEntidades.h"
 #include "Jogador.h"
 #include "Gerenciador_Colisao.h"
+#include "Plataforma.h"
 #include "ArmadilhaUrso.h"
 #include "Zumbi.h"
 #include "Olho.h"

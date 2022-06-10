@@ -14,6 +14,7 @@ public:
     ~Olho();
 
     virtual void executar();
+    virtual void corrigirPosicao(Vector2f pos);
     void baterAsas();
     Laser* atirar(Vector2f alvo);
     const Laser* getLaser() const;

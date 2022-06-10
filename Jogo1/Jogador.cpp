@@ -116,21 +116,6 @@ void Jogador::tomarDano(int dano, float difPosX)
     operator--(dano);
 }
 
-void Jogador::operator--(int dano)
-{
-    num_vidas -= dano;
-}
-
-void Jogador::operator++(int vida)
-{
-    num_vidas += vida;
-}
-
-void Jogador::aplicarDeslize(float taxa)
-{
-    velocidade.x *= taxa;
-}
-
 void Jogador::corrigirPosicao(Vector2f pos)
 {
     if (velocidade.y > 0)

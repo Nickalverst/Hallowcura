@@ -9,7 +9,7 @@ ArmadilhaUrso::ArmadilhaUrso(Vector2f pos):
     }
 
     sprite.setTexture(tex);
-    sprite.setOrigin(Vector2f((float)tex.getSize().x / 2, (float)tex.getSize().y));
+    sprite.setOrigin(Vector2f((float)tex.getSize().x / 2, (float)tex.getSize().y / 2));
     sprite.scale(Vector2f(SIZE*1.5, SIZE*1.5));
 	sprite.setPosition(Vector2f(pos.x, pos.y -18));
 }
@@ -22,8 +22,7 @@ void ArmadilhaUrso::executar()
 {
 }
 
-void ArmadilhaUrso::afetarJogador(Jogador* j, Vector2f deltaPos)
+void ArmadilhaUrso::afetarPersonagem(Personagem* p, Vector2f deltaPos)
 {
-	j->tomarDano(dano);
-    cout << "tomou dano" << endl;
+	p->operator--(dano);
 }

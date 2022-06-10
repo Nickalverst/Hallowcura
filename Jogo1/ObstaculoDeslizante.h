@@ -1,6 +1,6 @@
 #pragma once
 #include "Obstaculo.h"
-#include "Jogador.h"
+#include "Personagem.h"
 class ObstaculoDeslizante :
     public Obstaculo
 {
@@ -13,7 +13,7 @@ public:
 
     virtual void executar() = 0;
 
-    virtual void afetarJogador(Jogador* j, Vector2f deltaPos);
-    void aplicarDeslize(Jogador* j);
+    virtual void afetarPersonagem(Personagem* p, Vector2f deltaPos);
+    void aplicarDeslize(Personagem* p);
 };
 

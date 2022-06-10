@@ -1,7 +1,6 @@
 #pragma once
 #include "Fase.h"
 #include "Barro.h"
-#include "Plataforma.h"
 
 class Fase_1_Floresta :
     public Fase

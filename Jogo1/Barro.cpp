@@ -10,7 +10,7 @@ Barro::Barro(Vector2f pos) :
     }
 
     sprite.setTexture(tex);
-    sprite.setOrigin(Vector2f((float)tex.getSize().x / 2, (float)tex.getSize().y));
+    sprite.setOrigin(Vector2f((float)tex.getSize().x / 2, (float)tex.getSize().y / 2));
     sprite.scale(Vector2f(SIZE, SIZE));
 }
 
@@ -20,4 +20,9 @@ Barro::~Barro()
 
 void Barro::executar()
 {
+}
+
+void Barro::afetarPersonagem(Personagem* p, Vector2f deltaPos)
+{
+    p->aplicarDeslize(taxaAtrito);
 }

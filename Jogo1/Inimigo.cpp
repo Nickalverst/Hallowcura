@@ -4,7 +4,7 @@ Inimigo::Inimigo(Vector2f position):
 	Personagem(position),
 	raioPatrulha(),
 	pontoInicial(),
-	dano(1)
+	dano(5)
 {
 	contador_inimigos++;
 }

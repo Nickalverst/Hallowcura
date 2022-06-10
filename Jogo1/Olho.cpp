@@ -2,10 +2,11 @@
 
 Olho::Olho(Vector2f pos) :
 	Inimigo(pos),
-    velocidadeVoo(10),
+    velocidadeVoo(5),
     alturaVoo(pos.y),
     laser()
 {
+    num_vidas = 15;
     raioPatrulha = 300;
     pontoInicial = pos.x;
 
@@ -14,9 +15,9 @@ Olho::Olho(Vector2f pos) :
         cerr << "Erro ao carregar a textura do olho. " << endl;
     }
 
-    gravidade = 0.25f;
+    gravidade = 0.15f;
     sprite.setTexture(tex);
-    sprite.setOrigin(Vector2f((float)tex.getSize().x / 2, (float)tex.getSize().y));
+    sprite.setOrigin(Vector2f((float)tex.getSize().x / 2, (float)tex.getSize().y / 2));
     sprite.scale(Vector2f(SIZE, SIZE));
 
     velocidadeMaxima = 1.f;
@@ -50,16 +51,7 @@ void Olho::executar()
         velocidade.x = -velocidadeMaxima;
     }
 
-    // Gravidade
-    if (sprite.getPosition().y + sprite.getLocalBounds().height < alturaChao) // Objeto está no ar
-    {
-        velocidade.y += gravidade;
-    }
-    else // Objeto está no chão
-    {
-        sprite.setPosition(Vector2f(sprite.getPosition().x, alturaChao - sprite.getLocalBounds().height));
-        velocidade.y = 0.0f;
-    }
+    velocidade.y += gravidade;
 
     if (sprite.getPosition().y + sprite.getLocalBounds().height > alturaVoo)
     {
@@ -67,6 +59,15 @@ void Olho::executar()
     }
 
     sprite.move(velocidade);
+}
+
+void Olho::corrigirPosicao(Vector2f pos)
+{
+    if (velocidade.y > 0)
+    {
+        sprite.setPosition(pos);
+        baterAsas();
+    }
 }
 
 void Olho::baterAsas()

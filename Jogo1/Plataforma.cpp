@@ -25,10 +25,10 @@ void Plataforma::executar()
 {
 }
 
-void Plataforma::afetarJogador(Jogador* j, Vector2f deltaPos)
+void Plataforma::afetarPersonagem(Personagem* p, Vector2f deltaPos)
 {
     if (deltaPos.y > 0)
     {
-        j->corrigirPosicao(Vector2f(j->getPosicao().x, getPosicao().y - (j->getTamanho().y / 2 + getTamanho().y / 2)));
+        p->corrigirPosicao(Vector2f(p->getPosicao().x, getPosicao().y - (p->getTamanho().y / 2 + getTamanho().y / 2)));
     }
 }

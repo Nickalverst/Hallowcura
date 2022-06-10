@@ -1,5 +1,7 @@
 #pragma once
 #include "Fase.h"
+#include "Oleo.h"
+
 class Fase_2_Ponte :
     public Fase
 {
@@ -10,5 +12,6 @@ public:
     ~Fase_2_Ponte();
 
     virtual void executar();
+    void criarEntidades();
 };
 

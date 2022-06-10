@@ -40,14 +40,15 @@ void Fase::criarEntidades()
 	vector<Vector2f> posicoesZumbi;
 	for (int i = 200; i < 1600; i += 100)
 	{
-		posicoesZumbi.push_back(Vector2f((float)i, 800));
+		posicoesZumbi.push_back(Vector2f((float)i, 400));
+		//posicoesZumbi.push_back(Vector2f((float)i, 400));
 	}
 
 	// Possíveis posições de spawn do olho
 	vector<Vector2f> posicoesOlho;
 	for (int i = 100; i < 1600; i += 100)
 	{
-		posicoesOlho.push_back(Vector2f((float)i, 300));
+		posicoesOlho.push_back(Vector2f((float)i, 200));
 	}
 
 	cout << "Número de zumbis: " << n_zumbis << ". Número de olhos: " << n_olhos << endl;

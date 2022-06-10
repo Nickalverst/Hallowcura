@@ -3,6 +3,7 @@
 Zumbi::Zumbi(Vector2f pos) :
     Inimigo(pos)
 {
+    num_vidas = 30;
     raioPatrulha = 300;
     pontoInicial = pos.x;
 
@@ -12,7 +13,7 @@ Zumbi::Zumbi(Vector2f pos) :
     }
 
     sprite.setTexture(tex);
-    sprite.setOrigin(Vector2f((float) tex.getSize().x / 2, (float) tex.getSize().y));
+    sprite.setOrigin(Vector2f((float) tex.getSize().x / 2, (float) tex.getSize().y / 2));
     sprite.scale(Vector2f(SIZE, SIZE));
 
     velocidadeMaxima = 1.f;
@@ -25,17 +26,17 @@ Zumbi::~Zumbi()
 
 void Zumbi::executar()
 {
-    if (sprite.getPosition().x < pontoInicial)
+    if (sprite.getPosition().x < pontoInicial || getPosicao().x < getTamanho().x)
     {
         if (!olhandoDireita)
         {
             olhandoDireita = true;
             sprite.setScale(Vector2f(SIZE, SIZE));
         }
-        
-        velocidade.x = velocidadeMaxima;
+        velocidade.x += aceleracao;
+        //velocidade.x = velocidadeMaxima;
     }
-    else if (sprite.getPosition().x > pontoInicial + raioPatrulha)
+    else if (sprite.getPosition().x > pontoInicial + raioPatrulha || getPosicao().x > 1600 - getTamanho().x / 2)
     {
         if (olhandoDireita)
         {
@@ -43,19 +44,19 @@ void Zumbi::executar()
             sprite.setScale(Vector2f(-SIZE, SIZE));
         }
 
-        velocidade.x = -velocidadeMaxima;
+        velocidade.x -= aceleracao; // -velocidadeMaxima;
     }
 
-    // Gravidade
-    if (sprite.getPosition().y + sprite.getLocalBounds().height < alturaChao) // Objeto está no ar
-    {
-        velocidade.y += gravidade;
-    }
-    else // Objeto está no chão
-    {
-        sprite.setPosition(Vector2f(sprite.getPosition().x, alturaChao - sprite.getLocalBounds().height));
-        velocidade.y = 0.0f;
-    }
+    velocidade.y += gravidade;
 
     sprite.move(velocidade);
+}
+
+void Zumbi::corrigirPosicao(Vector2f pos)
+{
+    if (velocidade.y > 0)
+    {
+        sprite.setPosition(pos);
+        velocidade.y = 0;
+    }
 }

@@ -11,12 +11,12 @@ ObstaculoDeslizante::~ObstaculoDeslizante()
 	taxaAtrito = 0.f;
 }
 
-void ObstaculoDeslizante::afetarJogador(Jogador* j, Vector2f deltaPos)
+void ObstaculoDeslizante::afetarPersonagem(Personagem* p, Vector2f deltaPos)
 {
-	aplicarDeslize(j);
+	aplicarDeslize(p);
 }
 
-void ObstaculoDeslizante::aplicarDeslize(Jogador* j)
+void ObstaculoDeslizante::aplicarDeslize(Personagem* p)
 {
-	j->aplicarDeslize(taxaAtrito);
+	p->aplicarDeslize(taxaAtrito);
 }

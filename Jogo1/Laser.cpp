@@ -11,7 +11,7 @@ Laser::Laser(Vector2f pos, Vector2f a):
 	}
 
 	sprite.setTexture(tex);
-	sprite.setOrigin(Vector2f((float)tex.getSize().x / 2, (float)tex.getSize().y));
+	sprite.setOrigin(Vector2f((float)tex.getSize().x / 2, (float)tex.getSize().y / 2));
 	sprite.scale(Vector2f(SIZE, SIZE));
 
 	velocidadeMaxima = 5.f;

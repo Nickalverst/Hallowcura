@@ -11,3 +11,18 @@ Personagem::Personagem(Vector2f position):
 Personagem::~Personagem()
 {
 }
+
+void Personagem::operator--(int dano)
+{
+	num_vidas -= dano;
+}
+
+void Personagem::operator++(int vida)
+{
+	num_vidas += vida;
+}
+
+void Personagem::aplicarDeslize(float taxa)
+{
+	velocidade.x *= taxa;
+}

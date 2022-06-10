@@ -10,5 +10,6 @@ public:
     ~Zumbi();
 
     virtual void executar();
+    virtual void corrigirPosicao(Vector2f pos);
 };
 

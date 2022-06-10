@@ -10,5 +10,6 @@ public:
     ~Barro();
 
     virtual void executar();
+    virtual void afetarPersonagem(Personagem* p, Vector2f deltaPos);
 };
 
