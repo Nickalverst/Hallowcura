@@ -10,6 +10,7 @@ Menu::Menu() :
 		cerr << "Erro ao carregar a textura principal do menu. " << endl;
 	}
 
+	sprite.scale(Vector2f(SIZE, SIZE));
 	sprite.setTexture(tex);
 
 	if (!fonte.loadFromFile("assets/arial.ttf"))
@@ -21,25 +22,25 @@ Menu::Menu() :
 	menu[0].setFillColor(Color::White);
 	menu[0].setString("Jogar fase 1");
 	menu[0].setOrigin(menu[0].getLocalBounds().width/2, menu[0].getLocalBounds().height/2);
-	menu[0].setPosition(Vector2f(800, 400));
+	menu[0].setPosition(Vector2f(800, 350));
 
 	menu[1].setFont(fonte);
-	menu[1].setFillColor(Color::Black);
+	menu[1].setFillColor(Color::Red);
 	menu[1].setString("Jogar fase 2");
 	menu[1].setOrigin(menu[1].getLocalBounds().width / 2, menu[1].getLocalBounds().height / 2);
-	menu[1].setPosition(Vector2f(800, 500));
+	menu[1].setPosition(Vector2f(800, 450));
 
 	menu[2].setFont(fonte);
-	menu[2].setFillColor(Color::Black);
+	menu[2].setFillColor(Color::Red);
 	menu[2].setString("Ranking");
 	menu[2].setOrigin(menu[2].getLocalBounds().width / 2, menu[2].getLocalBounds().height / 2);
-	menu[2].setPosition(Vector2f(800, 600));
+	menu[2].setPosition(Vector2f(800, 550));
 
 	menu[3].setFont(fonte);
-	menu[3].setFillColor(Color::Black);
+	menu[3].setFillColor(Color::Red);
 	menu[3].setString("Sair");
 	menu[3].setOrigin(menu[3].getLocalBounds().width / 2, menu[3].getLocalBounds().height / 2);
-	menu[3].setPosition(Vector2f(800, 700));
+	menu[3].setPosition(Vector2f(800, 650));
 }
 
 Menu::~Menu()
@@ -50,7 +51,7 @@ void Menu::moverCima()
 {
 	if (indiceItemSelecionado - 1 >= 0)
 	{
-		menu[indiceItemSelecionado].setFillColor(Color::Black);
+		menu[indiceItemSelecionado].setFillColor(Color::Red);
 		indiceItemSelecionado--;
 		menu[indiceItemSelecionado].setFillColor(Color::White);
 	}
@@ -60,7 +61,7 @@ void Menu::moverBaixo()
 {
 	if (indiceItemSelecionado + 1 < MAX_ITENS)
 	{
-		menu[indiceItemSelecionado].setFillColor(Color::Black);
+		menu[indiceItemSelecionado].setFillColor(Color::Red);
 		indiceItemSelecionado++;
 		menu[indiceItemSelecionado].setFillColor(Color::White);
 	}
