@@ -5,7 +5,6 @@ class ListaEntidades
 {
 private:
 	Lista<Entidade> LEs;
-	int tamanho;
 
 public:
 	ListaEntidades();
@@ -16,7 +15,5 @@ public:
 
 	void imprimir();
 	void executar();
-
-	const int getTamanho() const;
 };
 

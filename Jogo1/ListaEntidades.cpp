@@ -1,8 +1,7 @@
 #include "ListaEntidades.h"
 
 ListaEntidades::ListaEntidades():
-	LEs(),
-	tamanho(0)
+	LEs()
 {
 }
 
@@ -16,7 +15,6 @@ void ListaEntidades::inserir(Entidade* e)
 	if (e != nullptr)
 	{
 		LEs.incluaInfo(e);
-		tamanho++;
 	}
 	else
 	{
@@ -48,7 +46,6 @@ void ListaEntidades::remover(Entidade* e)
 					itr->setProximo(nullptr);
 					delete(e);
 					LEs.setUltimo(itr);
-					tamanho--;
 					return;
 				}
 			}
@@ -58,7 +55,6 @@ void ListaEntidades::remover(Entidade* e)
 				delete(itr->getProximo());
 				delete(e);
 				itr->setProximo(aux);
-				tamanho--;
 				return;
 			}
 
@@ -93,9 +89,4 @@ void ListaEntidades::executar()
 		pEntAux->executar();
 		pElAux = pElAux->getProximo();
 	}
-}
-
-const int ListaEntidades::getTamanho() const
-{
-	return tamanho;
 }
