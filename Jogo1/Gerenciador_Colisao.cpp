@@ -28,7 +28,6 @@ void Gerenciador_Colisao::Colisao(Fase* f)
             {
                 j1->atacar(LIs[i], -difPosX);
                 cout << "Vida restante: " << LIs[i]->getVida() << endl;
-                cout << LIs[i]->getID() << endl;
                 if (LIs[i]->getVida() <= 0)
                 {
                     f->removerEntidade(static_cast<Entidade*>(LIs[i]));

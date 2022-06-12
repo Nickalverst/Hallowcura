@@ -5,7 +5,6 @@ Laser::Laser(Vector2f pos, Vector2f a):
 	Entidade(pos),
 	alvo(a)
 {
-	id = 34;
 	if (!tex.loadFromFile("assets/laser.png"))
 	{
 		cerr << "Erro ao carregar a textura do zumbi. " << endl;

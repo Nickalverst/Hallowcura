@@ -2,8 +2,7 @@
 #include "Gerenciador_Grafico.h"
 
 Ente::Ente(Vector2f position):
-	GG(nullptr),
-	id(-1)
+	GG(nullptr)
 {
 	sprite.setPosition(position);
 }
@@ -14,7 +13,6 @@ Ente::~Ente()
 
 void Ente::imprimir_se()
 {
-	//cout << id << endl;
 	GG->desenhar(sprite);
 }
 
