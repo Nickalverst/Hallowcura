@@ -19,5 +19,6 @@ public:
 
     void corrigirPosicao(Vector2f pos);
     const bool getAtacando() const { return atacando; }
+    void setVida(int vida) { num_vidas = vida; }
 };
 

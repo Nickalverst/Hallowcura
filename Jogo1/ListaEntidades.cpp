@@ -45,9 +45,10 @@ void ListaEntidades::remover(Entidade* e)
 				if (itr->getProximo()->getInfo() == e)
 				{
 					delete(itr->getProximo());
-					delete(e);
 					itr->setProximo(nullptr);
+					delete(e);
 					LEs.setUltimo(itr);
+					tamanho--;
 					return;
 				}
 			}
@@ -57,7 +58,7 @@ void ListaEntidades::remover(Entidade* e)
 				delete(itr->getProximo());
 				delete(e);
 				itr->setProximo(aux);
-					
+				tamanho--;
 				return;
 			}
 

@@ -43,10 +43,6 @@ void Gerenciador_Colisao::Colisao(Fase* f)
             else
             {
                 LIs[i]->atacar(j1, difPosX);
-                if (j1->getVida() <= 0)
-                {
-                    //f->removerEntidade(static_cast<Entidade*>(j1));
-                }
             }
         }
     }
@@ -63,21 +59,19 @@ void Gerenciador_Colisao::Colisao(Fase* f)
             (*it)->afetarPersonagem(static_cast<Personagem*>(j1), Vector2f(difPosX, difPosY));
         }
         
-        
-        int j = 0;
         // Com inimigos
-        for (vector<Inimigo*>::iterator itIn = LIs.begin(); itIn != LIs.end(); itIn++, j++)
+        for (int j = 0; j < LIs.size(); j++)
         {
-            float difPosX = (*it)->getPosicao().x - (*itIn)->getPosicao().x;
-            float difPosY = (*it)->getPosicao().y - (*itIn)->getPosicao().y;
-            if (abs(difPosX) <= ((*it)->getTamanho().x / 2 + (*itIn)->getTamanho().x / 2) &&
-                abs(difPosY) <= ((*it)->getTamanho().y / 2 + (*itIn)->getTamanho().y / 2))
+            float difPosX = (*it)->getPosicao().x - LIs[j]->getPosicao().x;
+            float difPosY = (*it)->getPosicao().y - LIs[j]->getPosicao().y;
+            if (abs(difPosX) <= ((*it)->getTamanho().x / 2 + LIs[j]->getTamanho().x / 2) &&
+                abs(difPosY) <= ((*it)->getTamanho().y / 2 + LIs[j]->getTamanho().y / 2))
             {
-                (*it)->afetarPersonagem(static_cast<Personagem*>(*itIn), Vector2f(difPosX, difPosY));
-                if ((*itIn)->getVida() <= 0)
+                (*it)->afetarPersonagem(static_cast<Personagem*>(LIs[j]), Vector2f(difPosX, difPosY));
+                if (LIs[j]->getVida() <= 0)
                 {
-                    /*f->removerEntidade(static_cast<Entidade*>(*itIn));
-                    LIs.erase(LIs.begin() + j);*/
+                    f->removerEntidade(static_cast<Entidade*>(LIs[j]));
+                    LIs.erase(LIs.begin() + j);
                 }
             }
         }

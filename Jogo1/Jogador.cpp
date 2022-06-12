@@ -6,6 +6,8 @@ Jogador::Jogador(Vector2f position) :
     pulando(false),
     atacando(false)
 {
+    num_vidas = 200;
+
     if (!tex.loadFromFile("assets/jogador_idle.png"))
     {
         cerr << "Erro ao carregar a textura principal do jogador. " << endl;
@@ -18,7 +20,6 @@ Jogador::Jogador(Vector2f position) :
         cerr << "Erro ao carregar texturas do jogador. " << endl;
     }
 
-    num_vidas = 100;
     sprite.setTexture(tex);
     sprite.setOrigin(Vector2f((float) tex.getSize().x/2, (float) tex.getSize().y / 2));
     sprite.scale(Vector2f(SIZE, SIZE));

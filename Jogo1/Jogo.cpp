@@ -105,6 +105,12 @@ void Jogo::executar()
                 }
             }
         }
+
+        if (jogador.getVida() <= 0)
+        {
+            estadoAtual = "menu";
+            jogador.setVida(200);
+        }
     }
 }
 
