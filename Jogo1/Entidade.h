@@ -5,7 +5,6 @@ class Entidade :
 	public Ente
 {
 protected:
-	int x, y;
 	Vector2f velocidade;
 	float aceleracao;
 	float desaceleracao;

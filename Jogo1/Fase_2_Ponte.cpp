@@ -33,7 +33,7 @@ void Fase_2_Ponte::criarEntidades()
 	posicaoPlataforma.push_back(Vector3f(1600 / 2, 900 - 32, 225));
 	posicaoPlataforma.push_back(Vector3f(1600 / 2, 153 * SIZE, 23));
 	posicaoPlataforma.push_back(Vector3f(72 * SIZE, 153 * SIZE, 23));
-	posicaoPlataforma.push_back(Vector3f(327 * SIZE, 153 * SIZE, 23));
+	posicaoPlataforma.push_back(Vector3f(328 * SIZE, 153 * SIZE, 23));
 	posicaoPlataforma.push_back(Vector3f(24 * SIZE, 105 * SIZE, 21));
 	posicaoPlataforma.push_back(Vector3f(136 * SIZE, 105 * SIZE, 21));
 	posicaoPlataforma.push_back(Vector3f(264 * SIZE, 105 * SIZE, 21));
