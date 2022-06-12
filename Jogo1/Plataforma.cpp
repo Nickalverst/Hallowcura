@@ -7,7 +7,7 @@ Plataforma::Plataforma(Gerenciador_Grafico* GG, Vector3f pos):
     string intstr = to_string((int)pos.z);
 
     sprite.setPosition(Vector2f(pos.x, pos.y));
-    if (!tex.loadFromFile("assets/plataforma_" + intstr + "u.png"))
+    if (!tex.loadFromFile("assets/plataforma_lvl" + intstr + "u.png"))
     {
         cerr << "Erro ao carregar a textura da plataforma. " << endl;
     }

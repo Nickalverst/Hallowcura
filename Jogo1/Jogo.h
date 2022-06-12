@@ -17,7 +17,7 @@ private:
 	Fase_2_Ponte* fase2;
 	Menu menu;
 	string estadoAtual;
-	bool pausado;
+	bool pausado, chefaoCriado;
 
 public:
 	Jogo();

@@ -19,6 +19,7 @@ protected:
 	Gerenciador_Grafico* GG;
 	Gerenciador_Colisao GC;
 	Jogador* jogador;
+	vector<Vector2f> posicoesObstaculos;
 
 public:
 	Fase(Gerenciador_Grafico* g, Jogador* j);

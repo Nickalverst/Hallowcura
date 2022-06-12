@@ -5,7 +5,8 @@ Fase::Fase(Gerenciador_Grafico* g, Jogador* j):
 	LE(),
 	GG(g),
 	GC(j),
-	jogador(j)
+	jogador(j),
+	posicoesObstaculos()
 {
 	incluirEntidade(static_cast<Entidade*>(j));
 	criarEntidades();
@@ -81,5 +82,25 @@ void Fase::criarEntidades()
 		LE.inserir(static_cast<Entidade*>(tiro));
 		tiro->setGG(GG);
 		GC.inserirProjetil(tiro);
+	}
+
+	int n_obstaculos = (rand() % 4) + 3;
+
+	// Possíveis posições de spawn dos obstaculos
+	
+	for (int i = 200; i < 1600; i += 100) // 14 no máximo
+	{
+		posicoesObstaculos.push_back(Vector2f((float)i, 900 - 55));
+	}
+
+	// Criar armadilhas de urso
+	for (int i = 0; i < n_obstaculos; i++)
+	{
+		int pos = rand() % posicoesObstaculos.size();
+		ArmadilhaUrso* aux = new ArmadilhaUrso(posicoesObstaculos[pos]);
+		aux->setGG(GG);
+		posicoesObstaculos.erase(posicoesObstaculos.begin() + pos);
+		LE.inserir(static_cast<Entidade*>(aux));
+		GC.inserirObstaculo(static_cast<Obstaculo*>(aux));
 	}
 }

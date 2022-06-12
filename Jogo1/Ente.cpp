@@ -14,6 +14,7 @@ Ente::~Ente()
 
 void Ente::imprimir_se()
 {
+	//cout << id << endl;
 	GG->desenhar(sprite);
 }
 

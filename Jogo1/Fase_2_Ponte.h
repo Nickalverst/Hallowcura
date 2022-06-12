@@ -14,5 +14,6 @@ public:
 
     virtual void executar();
     void criarEntidades();
+    void criarChefao();
 };
 

@@ -19,7 +19,7 @@ public:
     ~UFO();
 
     virtual void executar();
-    void atirar(Vector2f alvo);
+    Laser* atirar(Vector2f alvo);
     virtual void corrigirPosicao(Vector2f p);
 
     Laser* getLaser() const { return laser; }

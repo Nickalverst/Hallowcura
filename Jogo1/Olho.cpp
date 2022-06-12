@@ -59,6 +59,7 @@ void Olho::executar()
     }
 
     sprite.move(velocidade);
+    teleporteParedes();
 }
 
 void Olho::corrigirPosicao(Vector2f pos)
@@ -72,7 +73,6 @@ void Olho::corrigirPosicao(Vector2f pos)
 
 void Olho::baterAsas()
 {
-    //sprite.setTexture(jogador_pulando);
     velocidade.y = -velocidadeVoo;
 }
 

@@ -7,7 +7,8 @@ Jogo::Jogo() :
     fase2(nullptr),
     menu(),
     estadoAtual("menu"),
-    pausado(false)
+    pausado(false),
+    chefaoCriado(false)
 {
     menu.setGG(&GG);
     jogador.setGG(&GG);
@@ -93,7 +94,15 @@ void Jogo::executar()
             {
                 fase2->executar();
                 GG.desenhar(static_cast<Fase*>(fase2));
-                if (Inimigo::getContadorInimigos() == 0) estadoAtual = "menu";
+                if (Inimigo::getContadorInimigos() == 0 && !chefaoCriado)
+                {
+                    fase2->criarChefao();
+                    chefaoCriado = true;
+                }
+                else if (Inimigo::getContadorInimigos() == 0)
+                {
+                    estadoAtual = "menu";
+                }
             }
         }
     }

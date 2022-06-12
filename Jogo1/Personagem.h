@@ -20,7 +20,10 @@ public:
 
 	virtual void executar() = 0;
 	virtual void corrigirPosicao(Vector2f pos) = 0;
+
 	void atacar(Personagem* p, float difPosX);
 	void tomarDano(int dano, float difPosX = 0);
+	void teleporteParedes();
+
 	const int getVida() const { return num_vidas; }
 };

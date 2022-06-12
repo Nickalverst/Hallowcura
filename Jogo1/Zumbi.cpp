@@ -50,6 +50,7 @@ void Zumbi::executar()
     velocidade.y += gravidade;
 
     sprite.move(velocidade);
+    teleporteParedes();
 }
 
 void Zumbi::corrigirPosicao(Vector2f pos)

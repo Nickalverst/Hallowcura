@@ -101,6 +101,7 @@ void Jogador::executar()
     velocidade.y += gravidade;
 
     if (pulando) sprite.setTexture(jogador_pulando);
+    teleporteParedes();
 }
 
 void Jogador::pular()

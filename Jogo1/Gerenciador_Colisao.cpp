@@ -63,6 +63,7 @@ void Gerenciador_Colisao::Colisao(Fase* f)
             (*it)->afetarPersonagem(static_cast<Personagem*>(j1), Vector2f(difPosX, difPosY));
         }
         
+        
         int j = 0;
         // Com inimigos
         for (vector<Inimigo*>::iterator itIn = LIs.begin(); itIn != LIs.end(); itIn++, j++)
@@ -73,26 +74,33 @@ void Gerenciador_Colisao::Colisao(Fase* f)
                 abs(difPosY) <= ((*it)->getTamanho().y / 2 + (*itIn)->getTamanho().y / 2))
             {
                 (*it)->afetarPersonagem(static_cast<Personagem*>(*itIn), Vector2f(difPosX, difPosY));
-                /*if ((*itIn)->getVida() <= 0)
+                if ((*itIn)->getVida() <= 0)
                 {
-                    f->removerEntidade(static_cast<Entidade*>(*itIn));
-                    LIs.erase(LIs.begin() + j);
-                }*/
+                    /*f->removerEntidade(static_cast<Entidade*>(*itIn));
+                    LIs.erase(LIs.begin() + j);*/
+                }
             }
         }
     }
 
     // Colisões com projéteis
-    for (vector<Laser*>::iterator it = LPs.begin(); it != LPs.end(); it++)
+    for (int i = 0; i < LPs.size(); i)
     {
-        float difPosX = (*it)->getPosicao().x - j1->getPosicao().x;
-        float difPosY = (*it)->getPosicao().y - j1->getPosicao().y;
-        if (abs(difPosX) <= ((*it)->getTamanho().x / 2 + j1->getTamanho().x / 2) &&
-            abs(difPosY) <= ((*it)->getTamanho().y / 2 + j1->getTamanho().y / 2))
+        float difPosX = LPs[i]->getPosicao().x - j1->getPosicao().x;
+        float difPosY = LPs[i]->getPosicao().y - j1->getPosicao().y;
+        if (abs(difPosX) <= (LPs[i]->getTamanho().x / 2 + j1->getTamanho().x / 2) &&
+            abs(difPosY) <= (LPs[i]->getTamanho().y / 2 + j1->getTamanho().y / 2))
         {
             cout << "Colisão com laser detectada. " << endl;
             j1->operator--(10);
-            f->removerEntidade(static_cast<Entidade*>(*it));
+            f->removerEntidade(static_cast<Entidade*>(LPs[i]));
+            LPs.erase(LPs.begin() + i);
+
+            cout << "Tamanho da lista de laser: " << LPs.size() << endl;
+        }
+        else
+        {
+            i++;
         }
     }
 }

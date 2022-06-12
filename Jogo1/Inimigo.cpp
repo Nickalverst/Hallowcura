@@ -11,7 +11,6 @@ Inimigo::Inimigo(Vector2f position):
 
 Inimigo::~Inimigo()
 {
-	cout << "decrementando esse negocio" << endl;
 	contador_inimigos--;
 }
 

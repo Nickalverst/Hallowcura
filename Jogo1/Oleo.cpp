@@ -1,7 +1,7 @@
 #include "Oleo.h"
 
 Oleo::Oleo(Vector2f pos):
-	ObstaculoDeslizante(1.05f)
+	ObstaculoDeslizante(1.01f)
 {
     sprite.setPosition(pos);
     if (!tex.loadFromFile("assets/oleo.png"))

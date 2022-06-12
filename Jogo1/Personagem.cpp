@@ -40,3 +40,15 @@ void Personagem::tomarDano(int dano, float difPosX)
 	else if (difPosX < 0) velocidade.x = velocidadeCambaleio; // Velocidade oposta ao inimigo
 	operator--(dano);
 }
+
+void Personagem::teleporteParedes()
+{
+	if (getPosicao().x > 1600)
+	{
+		corrigirPosicao(Vector2f(0, getPosicao().y));
+	}
+	else if (getPosicao().x < 0)
+	{
+		corrigirPosicao(Vector2f(1600, getPosicao().y));
+	}
+}

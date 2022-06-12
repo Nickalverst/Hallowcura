@@ -7,6 +7,7 @@ UFO::UFO(Vector2f pos, Gerenciador_Colisao* GC, ListaEntidades* LE, Jogador* j) 
     LE(LE),
     j1(j)
 {
+    num_vidas = 300;
     if (!tex.loadFromFile("assets/ovni.png"))
     {
         cerr << "Erro ao carregar a textura do UFO. " << endl;
@@ -23,21 +24,18 @@ UFO::~UFO()
 
 void UFO::executar()
 {
-    if (laser == nullptr)
-        atirar(j1->getPosicao());
-
+    /*if (laser == nullptr)
+        atirar(j1->getPosicao());*/
 }
 
-void UFO::atirar(Vector2f alvo)
+Laser* UFO::atirar(Vector2f alvo)
 {
-    Laser* aux = new Laser(sprite.getPosition(), j1->getPosicao());
+    Laser* aux = new Laser(sprite.getPosition(), alvo);
     laser = aux;
-    aux->setGG(GG);
-    LE->inserir(static_cast <Entidade*> (aux));
-    GC->inserirProjetil(static_cast <Laser*> (aux));
+    return aux;
 }
 
 void UFO::corrigirPosicao(Vector2f p)
 {
-
+    sprite.setPosition(p);
 }

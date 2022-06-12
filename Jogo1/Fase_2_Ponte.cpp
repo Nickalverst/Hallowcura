@@ -30,13 +30,14 @@ void Fase_2_Ponte::criarEntidades()
 	// Criar plataformas
 	vector<Vector3f> posicaoPlataforma;
 
-	posicaoPlataforma.push_back(Vector3f(1600 / 2, 900 - 32, 25));
-	posicaoPlataforma.push_back(Vector3f(200 * 4, 153 * 4, 5));
-	posicaoPlataforma.push_back(Vector3f(62 * 4, 153 * 4, 4));
-	posicaoPlataforma.push_back(Vector3f(337 * 4, 153 * 4, 4));
-	posicaoPlataforma.push_back(Vector3f(128 * 4, 89 * 4, 2));
-	posicaoPlataforma.push_back(Vector3f(272 * 4, 89 * 4, 2));
-	posicaoPlataforma.push_back(Vector3f(200 * 4, 89 * 4, 1));
+	posicaoPlataforma.push_back(Vector3f(1600 / 2, 900 - 32, 225));
+	posicaoPlataforma.push_back(Vector3f(1600 / 2, 153 * SIZE, 23));
+	posicaoPlataforma.push_back(Vector3f(72 * SIZE, 153 * SIZE, 23));
+	posicaoPlataforma.push_back(Vector3f(327 * SIZE, 153 * SIZE, 23));
+	posicaoPlataforma.push_back(Vector3f(24 * SIZE, 105 * SIZE, 21));
+	posicaoPlataforma.push_back(Vector3f(136 * SIZE, 105 * SIZE, 21));
+	posicaoPlataforma.push_back(Vector3f(264 * SIZE, 105 * SIZE, 21));
+	posicaoPlataforma.push_back(Vector3f(376 * SIZE, 105 * SIZE, 21));
 
 	for (int i = 0; i < (int) posicaoPlataforma.size(); i++)
 	{
@@ -45,14 +46,7 @@ void Fase_2_Ponte::criarEntidades()
 		GC.inserirObstaculo(static_cast<Obstaculo*>(aux));
 	}
 
-	int n_obstaculos = (rand() % 5) + 3;
-
-	// Possíveis posições de spawn dos obstaculos
-	vector<Vector2f> posicoesObstaculos;
-	for (int i = 200; i < 1600; i += 100)
-	{
-		posicoesObstaculos.push_back(Vector2f((float)i, 900 - 55));
-	}
+	int n_obstaculos = (rand() % 4) + 3;
 
 	// Criar barros
 	for (int i = 0; i < n_obstaculos; i++)
@@ -64,4 +58,19 @@ void Fase_2_Ponte::criarEntidades()
 		LE.inserir(static_cast<Entidade*>(aux));
 		GC.inserirObstaculo(static_cast<Obstaculo*>(aux));
 	}
+}
+
+void Fase_2_Ponte::criarChefao()
+{
+	cout << "Criando chefe" << endl;
+	UFO* aux = new UFO(Vector2f(1600 / 2, 100), &GC, &LE, jogador);
+	aux->setGG(GG);
+	LE.inserir(static_cast<Entidade*>(aux));
+	GC.inserirInimigo(static_cast<Inimigo*>(aux));
+	
+	// Atirar uma vez
+	Laser* tiro = aux->atirar(jogador->getPosicao());
+	LE.inserir(static_cast<Entidade*>(tiro));
+	tiro->setGG(GG);
+	GC.inserirProjetil(tiro);
 }
