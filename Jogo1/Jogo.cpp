@@ -98,8 +98,9 @@ void Jogo::executar()
                 {
                     fase2->criarChefao();
                     chefaoCriado = true;
+
                 }
-                else if (Inimigo::getContadorInimigos() == 0)
+                else if (Inimigo::getContadorInimigos() == 1 && chefaoCriado)
                 {
                     estadoAtual = "menu";
                 }

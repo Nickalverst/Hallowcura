@@ -19,6 +19,7 @@ void Gerenciador_Colisao::Colisao(Fase* f)
     // Colisões com inimigos
     for (int i = 0; i < LIs.size(); i++)
     {
+       
         float difPosX = LIs[i]->getPosicao().x - j1->getPosicao().x;
         float difPosY = LIs[i]->getPosicao().y - j1->getPosicao().y;
         if (abs(difPosX) <= (LIs[i]->getTamanho().x / 2 + j1->getTamanho().x / 2) &&
@@ -86,16 +87,17 @@ void Gerenciador_Colisao::Colisao(Fase* f)
     // Colisões com projéteis
     for (int i = 0; i < LPs.size(); i)
     {
+        cout << "Tamanho da lista de laser: " << LPs.size() << endl;
         float difPosX = LPs[i]->getPosicao().x - j1->getPosicao().x;
         float difPosY = LPs[i]->getPosicao().y - j1->getPosicao().y;
         if (abs(difPosX) <= (LPs[i]->getTamanho().x / 2 + j1->getTamanho().x / 2) &&
             abs(difPosY) <= (LPs[i]->getTamanho().y / 2 + j1->getTamanho().y / 2))
         {
             cout << "Colisão com laser detectada. " << endl;
-            j1->operator--(10);
+            j1->operator--(10); 
+           
             f->removerEntidade(static_cast<Entidade*>(LPs[i]));
             LPs.erase(LPs.begin() + i);
-
             cout << "Tamanho da lista de laser: " << LPs.size() << endl;
         }
         else

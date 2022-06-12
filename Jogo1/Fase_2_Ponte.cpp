@@ -69,8 +69,15 @@ void Fase_2_Ponte::criarChefao()
 	GC.inserirInimigo(static_cast<Inimigo*>(aux));
 	
 	// Atirar uma vez
-	Laser* tiro = aux->atirar(jogador->getPosicao());
-	LE.inserir(static_cast<Entidade*>(tiro));
-	tiro->setGG(GG);
-	GC.inserirProjetil(tiro);
+	Laser* tir = aux->atirar(jogador->getPosicao());
+	LE.inserir(static_cast<Entidade*>(tir));
+	GC.inserirProjetil(tir);
+	tir->setGG(GG);
+	
+	Zumbi* aux2 = new Zumbi(Vector2f(2000, 2000));
+	aux2->setGG(GG);
+	LE.inserir(static_cast<Entidade*>(aux2));
+	GC.inserirInimigo(static_cast<Inimigo*>(aux2));
+
+
 }
