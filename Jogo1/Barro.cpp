@@ -21,8 +21,3 @@ Barro::~Barro()
 void Barro::executar()
 {
 }
-
-void Barro::afetarPersonagem(Personagem* p, Vector2f deltaPos)
-{
-    p->aplicarDeslize(taxaAtrito);
-}

@@ -8,9 +8,9 @@ class Plataforma :
 private:
 
 public:
-    Plataforma(Gerenciador_Grafico* GG, Vector3f pos);
+    Plataforma(Vector3f pos);
     ~Plataforma();
 
     void executar();
-    virtual void afetarPersonagem(Personagem* p, Vector2f deltaPos);
+    virtual void afetarPersonagem(Personagem* p, Vector2f dPos);
 };

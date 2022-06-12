@@ -46,7 +46,8 @@ void Fase_1_Floresta::criarEntidades()
 
 	for (int i = 0; i < (int) posicaoPlataforma.size(); i++)
 	{
-		Plataforma* aux = new Plataforma(GG, posicaoPlataforma[i]);
+		Plataforma* aux = new Plataforma(posicaoPlataforma[i]);
+		aux->setGG(GG);
 		LE.inserir(static_cast<Entidade*>(aux));
 		GC.inserirObstaculo(static_cast<Obstaculo*>(aux));
 	}

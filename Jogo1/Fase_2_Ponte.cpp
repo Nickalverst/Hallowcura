@@ -41,7 +41,8 @@ void Fase_2_Ponte::criarEntidades()
 
 	for (int i = 0; i < (int) posicaoPlataforma.size(); i++)
 	{
-		Plataforma* aux = new Plataforma(GG, posicaoPlataforma[i]);
+		Plataforma* aux = new Plataforma(posicaoPlataforma[i]);
+		aux->setGG(GG);
 		LE.inserir(static_cast<Entidade*>(aux));
 		GC.inserirObstaculo(static_cast<Obstaculo*>(aux));
 	}
@@ -63,7 +64,7 @@ void Fase_2_Ponte::criarEntidades()
 void Fase_2_Ponte::criarChefao()
 {
 	cout << "Criando chefe" << endl;
-	UFO* aux = new UFO(Vector2f(1600 / 2, 100), &GC, &LE, jogador);
+	UFO* aux = new UFO(Vector2f(1600 / 2, 100));
 	aux->setGG(GG);
 	LE.inserir(static_cast<Entidade*>(aux));
 	GC.inserirInimigo(static_cast<Inimigo*>(aux));

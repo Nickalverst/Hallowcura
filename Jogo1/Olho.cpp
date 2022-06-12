@@ -3,8 +3,7 @@
 Olho::Olho(Vector2f pos) :
 	Inimigo(pos),
     velocidadeVoo(5),
-    alturaVoo(pos.y),
-    laser()
+    alturaVoo(pos.y)
 {
     num_vidas = 15;
     raioPatrulha = 300;
@@ -79,11 +78,5 @@ void Olho::baterAsas()
 Laser* Olho::atirar(Vector2f alvo)
 {
     Laser* aux = new Laser(sprite.getPosition(), alvo);
-    laser = aux;
     return aux;
-}
-
-const Laser* Olho::getLaser() const
-{
-    return laser;
 }

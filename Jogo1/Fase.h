@@ -23,7 +23,7 @@ protected:
 
 public:
 	Fase(Gerenciador_Grafico* g, Jogador* j);
-	~Fase();
+	virtual ~Fase();
 
 	void imprimirEntidades();
 	virtual void executar() = 0;

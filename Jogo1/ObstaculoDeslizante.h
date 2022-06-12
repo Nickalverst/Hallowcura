@@ -13,7 +13,7 @@ public:
 
     virtual void executar() = 0;
 
-    virtual void afetarPersonagem(Personagem* p, Vector2f deltaPos);
+    virtual void afetarPersonagem(Personagem* p, Vector2f dPos);
     void aplicarDeslize(Personagem* p);
 };
 

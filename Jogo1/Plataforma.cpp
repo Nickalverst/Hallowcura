@@ -1,9 +1,8 @@
 #include "Plataforma.h"
 
-Plataforma::Plataforma(Gerenciador_Grafico* GG, Vector3f pos):
+Plataforma::Plataforma(Vector3f pos):
     Obstaculo(0)
 {
-    setGG(GG);
     string intstr = to_string((int)pos.z);
 
     sprite.setPosition(Vector2f(pos.x, pos.y));

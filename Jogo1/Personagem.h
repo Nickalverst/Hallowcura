@@ -6,12 +6,11 @@ class Personagem :
 protected:
 	int num_vidas;
 	float gravidade;
-	float alturaChao;
 	float velocidadeCambaleio;
 	int dano;
 
 public:
-	Personagem(Vector2f position = Vector2f(0.f, 0.f));
+	Personagem(Vector2f position);
 	virtual ~Personagem();
 
 	void operator--(int dano);

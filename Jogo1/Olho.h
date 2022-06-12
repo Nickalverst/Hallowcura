@@ -8,7 +8,6 @@ class Olho :
 private:
     float velocidadeVoo;
     float alturaVoo;
-    Laser* laser;
 public:
     Olho(Vector2f pos);
     ~Olho();
@@ -17,6 +16,5 @@ public:
     virtual void corrigirPosicao(Vector2f pos);
     void baterAsas();
     Laser* atirar(Vector2f alvo);
-    const Laser* getLaser() const;
 };
 

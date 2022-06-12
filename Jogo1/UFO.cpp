@@ -1,11 +1,7 @@
 #include "UFO.h"
 
-UFO::UFO(Vector2f pos, Gerenciador_Colisao* GC, ListaEntidades* LE, Jogador* j) :
-    Inimigo(pos),
-    laser(nullptr),
-    GC(GC),
-    LE(LE),
-    j1(j)
+UFO::UFO(Vector2f pos) :
+    Inimigo(pos)
 {
     num_vidas = 300;
     if (!tex.loadFromFile("assets/ovni.png"))
@@ -29,7 +25,6 @@ void UFO::executar()
 Laser* UFO::atirar(Vector2f alvo)
 {
     Laser* aux = new Laser(sprite.getPosition(), alvo);
-    laser = aux;
     return aux;
 }
 
