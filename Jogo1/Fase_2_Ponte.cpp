@@ -64,7 +64,7 @@ void Fase_2_Ponte::criarEntidades()
 void Fase_2_Ponte::criarChefao()
 {
 	cout << "Criando chefe" << endl;
-	UFO* aux = new UFO(Vector2f(1600 / 2, 100));
+	OVNI* aux = new OVNI(Vector2f(1600 / 2, 100));
 	aux->setGG(GG);
 	LE.inserir(static_cast<Entidade*>(aux));
 	GC.inserirInimigo(static_cast<Inimigo*>(aux));

@@ -1,12 +1,12 @@
-#include "UFO.h"
+#include "OVNI.h"
 
-UFO::UFO(Vector2f pos) :
+OVNI::OVNI(Vector2f pos) :
     Inimigo(pos)
 {
     num_vidas = 300;
     if (!tex.loadFromFile("assets/ovni.png"))
     {
-        cerr << "Erro ao carregar a textura do UFO. " << endl;
+        cerr << "Erro ao carregar a textura do OVNI. " << endl;
     }
 
     sprite.setTexture(tex);
@@ -14,21 +14,21 @@ UFO::UFO(Vector2f pos) :
     sprite.scale(Vector2f(SIZE, SIZE));
 }
 
-UFO::~UFO()
+OVNI::~OVNI()
 {
 }
 
-void UFO::executar()
+void OVNI::executar()
 {
 }
 
-Laser* UFO::atirar(Vector2f alvo)
+Laser* OVNI::atirar(Vector2f alvo)
 {
     Laser* aux = new Laser(sprite.getPosition(), alvo);
     return aux;
 }
 
-void UFO::corrigirPosicao(Vector2f p)
+void OVNI::corrigirPosicao(Vector2f p)
 {
     sprite.setPosition(p);
 }

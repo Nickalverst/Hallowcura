@@ -6,14 +6,14 @@
 
 using namespace Gerenciadores;
 
-class UFO :
+class OVNI :
     public Inimigo
 {
 private:
 
 public:
-    UFO(Vector2f pos);
-    ~UFO();
+    OVNI(Vector2f pos);
+    ~OVNI();
 
     virtual void executar();
     Laser* atirar(Vector2f alvo);
