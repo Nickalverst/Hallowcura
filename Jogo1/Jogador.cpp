@@ -3,8 +3,8 @@
 Jogador::Jogador(Vector2f position) :
     Personagem(position),
     velocidadePulo(17.5f),
-    velocidadeCambaleio(5.f),
-    pulando(false)
+    pulando(false),
+    atacando(false)
 {
     if (!tex.loadFromFile("assets/jogador_idle.png"))
     {
@@ -30,6 +30,7 @@ Jogador::~Jogador()
 
 void Jogador::executar()
 {
+    atacando = false;
     sprite.setTexture(tex);
     // Pulo
     if (Keyboard::isKeyPressed(Keyboard::W) ||
@@ -76,7 +77,7 @@ void Jogador::executar()
 
     if (Keyboard::isKeyPressed(Keyboard::F))
     {
-        
+        atacando = true;
     }
 
     if (Keyboard::isKeyPressed(Keyboard::Enter))
@@ -107,13 +108,6 @@ void Jogador::pular()
     sprite.setTexture(jogador_pulando);
     velocidade.y = -velocidadePulo;
     pulando = true;
-}
-
-void Jogador::tomarDano(int dano, float difPosX)
-{
-    if (difPosX > 0) velocidade.x = -velocidadeCambaleio;
-    else if (difPosX < 0) velocidade.x = velocidadeCambaleio; // Velocidade oposta ao inimigo
-    operator--(dano);
 }
 
 void Jogador::corrigirPosicao(Vector2f pos)

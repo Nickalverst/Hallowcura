@@ -7,7 +7,9 @@ Fase::Fase(Gerenciador_Grafico* g, Jogador* j):
 	GC(j),
 	jogador(j)
 {
+	incluirEntidade(static_cast<Entidade*>(j));
 	criarEntidades();
+	setGG(g);
 }
 
 Fase::~Fase()
@@ -41,7 +43,6 @@ void Fase::criarEntidades()
 	for (int i = 200; i < 1600; i += 100)
 	{
 		posicoesZumbi.push_back(Vector2f((float)i, 400));
-		//posicoesZumbi.push_back(Vector2f((float)i, 400));
 	}
 
 	// Possíveis posições de spawn do olho

@@ -17,14 +17,37 @@ Gerenciador_Colisao::~Gerenciador_Colisao()
 void Gerenciador_Colisao::Colisao(Fase* f)
 {
     // Colisões com inimigos
-    for (vector<Inimigo*>::iterator it = LIs.begin(); it != LIs.end(); it++)
+    for (int i = 0; i < LIs.size(); i++)
     {
-        float difPosX = (*it)->getPosicao().x - j1->getPosicao().x;
-        float difPosY = (*it)->getPosicao().y - j1->getPosicao().y;
-        if (abs(difPosX) <= ((*it)->getTamanho().x / 2 + j1->getTamanho().x / 2) &&
-            abs(difPosY) <= ((*it)->getTamanho().y / 2 + j1->getTamanho().y / 2))
+        float difPosX = LIs[i]->getPosicao().x - j1->getPosicao().x;
+        float difPosY = LIs[i]->getPosicao().y - j1->getPosicao().y;
+        if (abs(difPosX) <= (LIs[i]->getTamanho().x / 2 + j1->getTamanho().x / 2) &&
+            abs(difPosY) <= (LIs[i]->getTamanho().y / 2 + j1->getTamanho().y / 2))
         {
-            (*it)->atacar(j1, difPosX);
+            if (j1->getAtacando())
+            {
+                j1->atacar(LIs[i], -difPosX);
+                cout << "Vida restante: " << LIs[i]->getVida() << endl;
+                cout << LIs[i]->getID() << endl;
+                if (LIs[i]->getVida() <= 0)
+                {
+                    f->removerEntidade(static_cast<Entidade*>(LIs[i]));
+                    LIs.erase(LIs.begin() + i);
+                    cout << "Contador de inimigos: " << Inimigo::getContadorInimigos() << endl;
+                }
+                else
+                {
+                    i++;
+                }
+            }
+            else
+            {
+                LIs[i]->atacar(j1, difPosX);
+                if (j1->getVida() <= 0)
+                {
+                    //f->removerEntidade(static_cast<Entidade*>(j1));
+                }
+            }
         }
     }
 
@@ -39,9 +62,10 @@ void Gerenciador_Colisao::Colisao(Fase* f)
         {
             (*it)->afetarPersonagem(static_cast<Personagem*>(j1), Vector2f(difPosX, difPosY));
         }
-
+        
+        int j = 0;
         // Com inimigos
-        for (vector<Inimigo*>::iterator itIn = LIs.begin(); itIn != LIs.end(); itIn++)
+        for (vector<Inimigo*>::iterator itIn = LIs.begin(); itIn != LIs.end(); itIn++, j++)
         {
             float difPosX = (*it)->getPosicao().x - (*itIn)->getPosicao().x;
             float difPosY = (*it)->getPosicao().y - (*itIn)->getPosicao().y;
@@ -49,6 +73,11 @@ void Gerenciador_Colisao::Colisao(Fase* f)
                 abs(difPosY) <= ((*it)->getTamanho().y / 2 + (*itIn)->getTamanho().y / 2))
             {
                 (*it)->afetarPersonagem(static_cast<Personagem*>(*itIn), Vector2f(difPosX, difPosY));
+                /*if ((*itIn)->getVida() <= 0)
+                {
+                    f->removerEntidade(static_cast<Entidade*>(*itIn));
+                    LIs.erase(LIs.begin() + j);
+                }*/
             }
         }
     }
@@ -61,13 +90,11 @@ void Gerenciador_Colisao::Colisao(Fase* f)
         if (abs(difPosX) <= ((*it)->getTamanho().x / 2 + j1->getTamanho().x / 2) &&
             abs(difPosY) <= ((*it)->getTamanho().y / 2 + j1->getTamanho().y / 2))
         {
+            cout << "Colisão com laser detectada. " << endl;
             j1->operator--(10);
             f->removerEntidade(static_cast<Entidade*>(*it));
         }
     }
-
-    // Colisões dos inimigos com plataformas
-
 }
 
 void Gerenciador_Colisao::inserirInimigo(Inimigo* ini)

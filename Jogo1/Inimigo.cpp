@@ -3,20 +3,16 @@
 Inimigo::Inimigo(Vector2f position):
 	Personagem(position),
 	raioPatrulha(),
-	pontoInicial(),
-	dano(5)
+	pontoInicial()
 {
+	dano = 5;
 	contador_inimigos++;
 }
 
 Inimigo::~Inimigo()
 {
+	cout << "decrementando esse negocio" << endl;
 	contador_inimigos--;
-}
-
-void Inimigo::atacar(Jogador* j, float difPosX)
-{
-	j->tomarDano(dano, difPosX);
 }
 
 const int Inimigo::getContadorInimigos()

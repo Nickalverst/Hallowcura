@@ -29,9 +29,29 @@ void ListaEntidades::remover(Entidade* e)
 	Elemento<Entidade>* itr = LEs.getPrimeiro();
 	if (e != nullptr)
 	{
-		while (itr != LEs.getUltimo() && itr->getProximo()->getProximo() != nullptr)
+		if (itr->getInfo() == e)
 		{
-			if (itr->getProximo()->getInfo() == e)
+			Elemento<Entidade>* aux = itr->getProximo();
+			delete(itr);
+			delete(e);
+			LEs.setPrimeiro(aux);
+			return;
+		}
+
+		while (itr != LEs.getUltimo())
+		{
+			if (itr->getProximo() == LEs.getUltimo())
+			{
+				if (itr->getProximo()->getInfo() == e)
+				{
+					delete(itr->getProximo());
+					delete(e);
+					itr->setProximo(nullptr);
+					LEs.setUltimo(itr);
+					return;
+				}
+			}
+			else if (itr->getProximo()->getInfo() == e)
 			{
 				Elemento<Entidade>* aux = itr->getProximo()->getProximo();
 				delete(itr->getProximo());

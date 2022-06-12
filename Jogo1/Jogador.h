@@ -5,8 +5,7 @@ class Jogador :
 {
 private:
     float velocidadePulo;
-    float velocidadeCambaleio;
-    bool pulando;
+    bool pulando, atacando;
     Texture jogador_pulando,
         jogador_andando,
         jogador_morto;
@@ -18,8 +17,7 @@ public:
     virtual void executar();
     void pular();
 
-    void tomarDano(int dano, float difPosX = 0);
-
     void corrigirPosicao(Vector2f pos);
+    const bool getAtacando() const { return atacando; }
 };
 

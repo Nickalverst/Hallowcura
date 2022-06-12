@@ -21,6 +21,9 @@ public:
 
     Elemento<TL>* getPrimeiro() const;
     Elemento<TL>* getUltimo() const;
+
+    void setPrimeiro(Elemento<TL>* el);
+    void setUltimo(Elemento<TL>* el);
 };
 
 template<class TL>
@@ -115,4 +118,30 @@ template<class TL>
 Elemento<TL>* Lista<TL>::getUltimo() const
 {
     return pUltimo;
+}
+
+template<class TL>
+inline void Lista<TL>::setPrimeiro(Elemento<TL>* el)
+{
+    if (el != nullptr)
+    {
+        pPrimeiro = el;
+    }
+    else
+    {
+        cerr << "Ponteiro nulo. " << endl;
+    }
+}
+
+template<class TL>
+inline void Lista<TL>::setUltimo(Elemento<TL>* el)
+{
+    if (el != nullptr)
+    {
+        pUltimo = el;
+    }
+    else
+    {
+        cerr << "Ponteiro nulo. " << endl;
+    }
 }

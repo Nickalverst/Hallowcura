@@ -3,19 +3,14 @@
 Jogo::Jogo() :
     GG(),
     jogador(Vector2f(50.f, 800.f)),
-    fase1(&GG, &jogador),
-    fase2(&GG, &jogador),
+    fase1(nullptr),
+    fase2(nullptr),
     menu(),
     estadoAtual("menu"),
     pausado(false)
 {
     menu.setGG(&GG);
-    fase1.setGG(&GG);
-    fase2.setGG(&GG);
     jogador.setGG(&GG);
-
-    fase1.incluirEntidade(&jogador);
-    fase2.incluirEntidade(&jogador);
     executar();
 }
 
@@ -45,10 +40,12 @@ void Jogo::executar()
                         switch (menu.getItemPressionado())
                         {
                         case 0:
+                            fase1 = new Fase_1_Floresta(&GG, &jogador);
                             estadoAtual = "fase1";
                             cout << "Apertou jogar fase 1. " << endl;
                             break;
                         case 1:
+                            fase2 = new Fase_2_Ponte(&GG, &jogador);
                             estadoAtual = "fase2";
                             cout << "Apertou jogar fase 2. " << endl;
                             break;
@@ -83,14 +80,19 @@ void Jogo::executar()
             }
             else if (estadoAtual == "fase1")
             {
-                fase1.executar();
-                GG.desenhar(static_cast<Fase*>(&fase1));
-                if (Inimigo::getContadorInimigos() == 0) estadoAtual = "fase2";
+                fase1->executar();
+                GG.desenhar(static_cast<Fase*>(fase1));
+                if (Inimigo::getContadorInimigos() == 0)
+                {
+                    fase2 = new Fase_2_Ponte(&GG, &jogador);
+                    estadoAtual = "fase2";
+                    //delete(fase1);
+                }
             }
             else if (estadoAtual == "fase2")
             {
-                fase2.executar();
-                GG.desenhar(static_cast<Fase*>(&fase2));
+                fase2->executar();
+                GG.desenhar(static_cast<Fase*>(fase2));
                 if (Inimigo::getContadorInimigos() == 0) estadoAtual = "menu";
             }
         }

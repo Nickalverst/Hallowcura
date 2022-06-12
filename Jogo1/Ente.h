@@ -18,7 +18,7 @@ protected:
 
 public:
 	Ente(Vector2f position = Vector2f(0.f, 0.f));
-	~Ente();
+	virtual ~Ente();
 	virtual void executar() = 0;
 	void imprimir_se();
 

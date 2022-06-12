@@ -4,9 +4,15 @@ Fase_1_Floresta::Fase_1_Floresta(Gerenciador_Grafico* g, Jogador* j) :
 	Fase(g, j)
 {
 	// Fundo de tela
-	if (!tex.loadFromFile("assets/floresta.png"))
+	try {
+		if (!tex.loadFromFile("assets/floresta.png"))
+		{
+			throw "Erro ao carregar a textura da fase Floresta. ";
+		}
+	}
+	catch (const char* msg)
 	{
-		cerr << "Erro ao carregar a textura da fase Floresta. " << endl;
+		cerr << msg << endl;
 	}
 
 	sprite.setTexture(tex);

@@ -21,7 +21,6 @@ Laser::Laser(Vector2f pos, Vector2f a):
 	direcao /= norma;
 	velocidade = direcao * velocidadeMaxima;
 	float angulo = atan(direcao.y / direcao.x) * (180.0 / (2*acos(0.f))); // 2 * acos(0) = pi
-	cout << "Angulo: " << angulo << endl;
 	sprite.setRotation(angulo);
 }
 
