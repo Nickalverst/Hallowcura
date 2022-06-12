@@ -11,11 +11,6 @@ Gerenciador_Grafico::~Gerenciador_Grafico()
 	
 }
 
-void Gerenciador_Grafico::desenhar(Entidade* e)
-{
-	e->imprimir_se();
-}
-
 void Gerenciador_Grafico::desenhar(Fase* f)
 {
 	window.clear();
@@ -40,11 +35,6 @@ void Gerenciador_Grafico::desenhar(Menu* m)
 	}
 
 	window.display();
-}
-
-void Gerenciador_Grafico::desenhar(RectangleShape body)
-{
-	window.draw(body);
 }
 
 void Gerenciador_Grafico::desenhar(Sprite s)

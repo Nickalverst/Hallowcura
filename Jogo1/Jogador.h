@@ -8,7 +8,8 @@ private:
     bool pulando, atacando;
     Texture jogador_pulando,
         jogador_andando,
-        jogador_morto;
+        jogador_morto,
+        jogador_atacando;
 
 public:
     Jogador(Vector2f position);

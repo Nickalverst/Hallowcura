@@ -15,7 +15,8 @@ Jogador::Jogador(Vector2f position) :
 
     if (!jogador_pulando.loadFromFile("assets/jogador_pulando.png") ||
         !jogador_andando.loadFromFile("assets/jogador_andando.png") ||
-        !jogador_morto.loadFromFile("assets/jogador_morto.png"))
+        !jogador_morto.loadFromFile("assets/jogador_morto.png") ||
+        !jogador_atacando.loadFromFile("assets/jogador_ataque.png"))
     {
         cerr << "Erro ao carregar texturas do jogador. " << endl;
     }
@@ -78,12 +79,8 @@ void Jogador::executar()
 
     if (Keyboard::isKeyPressed(Keyboard::F))
     {
+        sprite.setTexture(jogador_atacando);
         atacando = true;
-    }
-
-    if (Keyboard::isKeyPressed(Keyboard::Enter))
-    {
-
     }
 
     if (abs(velocidade.x) > velocidadeMaxima)

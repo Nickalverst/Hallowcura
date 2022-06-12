@@ -13,10 +13,8 @@ public:
 	Gerenciador_Grafico();
 	~Gerenciador_Grafico();
 
-	void desenhar(Entidade* e);
 	void desenhar(Fase* f);
 	void desenhar(Menu* m);
-	void desenhar(RectangleShape b);
 	void desenhar(Sprite s);
 
 	RenderWindow* getWindow() { return &window; };

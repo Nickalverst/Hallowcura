@@ -24,8 +24,6 @@ UFO::~UFO()
 
 void UFO::executar()
 {
-    /*if (laser == nullptr)
-        atirar(j1->getPosicao());*/
 }
 
 Laser* UFO::atirar(Vector2f alvo)
