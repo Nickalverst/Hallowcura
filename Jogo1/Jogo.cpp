@@ -87,7 +87,6 @@ void Jogo::executar()
                 {
                     fase2 = new Fase_2_Ponte(&GG, &jogador);
                     estadoAtual = "fase2";
-                    //delete(fase1);
                 }
             }
             else if (estadoAtual == "fase2")
@@ -99,10 +98,22 @@ void Jogo::executar()
                     fase2->criarChefao();
                     chefaoCriado = true;
                 }
-                else if (Inimigo::getContadorInimigos() == 0)
+                else if (Inimigo::getContadorInimigos() == 1 && chefaoCriado)
                 {
                     estadoAtual = "menu";
                 }
+            }
+            else if (estadoAtual == "ranking")
+            {
+                GG.getWindow()->clear();
+
+                for (int i = 0; i < 10; i++)
+                {
+                    GG.getWindow()->draw(menu.getRanking()[i]);
+                }
+
+                GG.getWindow()->display();
+                GG.getWindow()->draw(*(menu.getRanking()));
             }
         }
 

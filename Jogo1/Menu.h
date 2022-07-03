@@ -8,6 +8,7 @@ class Menu :
 private:
     int indiceItemSelecionado;
     Font fonte;
+    Text ranking[10];
     Text menu[MAX_ITENS];
 
 public:
@@ -23,5 +24,7 @@ public:
     int getItemPressionado() const;
 
     virtual void executar();
+
+    Text* getRanking();
 };
 

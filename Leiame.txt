@@ -1,0 +1,5 @@
+Requisitos de sistema: Sistema operacional Winodws (10, 8, 7, Vista, XP), Linux ou macOS.
+
+Criado no Windows 10 com Visual Studio Community 2019 versão 16.11.15
+
+Com apoio da biblioteca SFML-2.5.1 32(bits)

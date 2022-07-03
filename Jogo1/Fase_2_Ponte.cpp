@@ -74,4 +74,9 @@ void Fase_2_Ponte::criarChefao()
 	LE.inserir(static_cast<Entidade*>(tiro));
 	tiro->setGG(GG);
 	GC.inserirProjetil(tiro);
+
+	Zumbi* a2 = new Zumbi(Vector2f(5000, 5000));
+	LE.inserir(static_cast<Entidade*>(a2));
+	a2->setGG(GG);
+	GC.inserirInimigo(static_cast<Inimigo*>(a2));
 }

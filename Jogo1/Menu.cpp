@@ -85,3 +85,25 @@ int Menu::getItemPressionado() const
 void Menu::executar()
 {
 }
+
+Text* Menu::getRanking()
+{
+
+	for (int i = 0; i < 5; i++)
+	{
+		string intstr = to_string((int)i);
+		ranking[i].setFont(fonte);
+		ranking[i].setFillColor(Color::White);
+		ranking[i].setString("cPP" + intstr);
+		ranking[i].setOrigin(menu[0].getLocalBounds().width / 2, menu[0].getLocalBounds().height / 2);
+		ranking[i].setPosition(Vector2f(200, 100 + 100*i));
+
+		string aux = to_string((int)i*20);
+		ranking[i + 5].setFont(fonte);
+		ranking[i + 5].setFillColor(Color::White);
+		ranking[i + 5].setString("pontuação: 000");
+		ranking[i + 5].setOrigin(menu[0].getLocalBounds().width / 2, menu[0].getLocalBounds().height / 2);
+		ranking[i + 5].setPosition(Vector2f(500, 100 + 100 * i));
+	}
+	return &ranking[0];
+}
