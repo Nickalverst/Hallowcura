@@ -20,7 +20,7 @@ Laser::Laser(Vector2f pos, Vector2f a):
 	float norma = sqrt(direcao.x * direcao.x + direcao.y * direcao.y);
 	direcao /= norma;
 	velocidade = direcao * velocidadeMaxima;
-	float angulo = atan(direcao.y / direcao.x) * (180.0 / (2*acos(0.f))); // 2 * acos(0) = pi
+	float angulo = atan(direcao.y / direcao.x) * (180.0f / (2*acos(0.f))); // 2 * acos(0) = pi
 	sprite.setRotation(angulo);
 }
 

@@ -17,7 +17,7 @@ Gerenciador_Colisao::~Gerenciador_Colisao()
 void Gerenciador_Colisao::Colisao(Fase* f)
 {
     // Colisões com inimigos
-    for (int i = 0; i < LIs.size(); i++)
+    for (int i = 0; i < (int) LIs.size(); i++)
     {
         float difPosX = LIs[i]->getPosicao().x - j1->getPosicao().x;
         float difPosY = LIs[i]->getPosicao().y - j1->getPosicao().y;
@@ -59,7 +59,7 @@ void Gerenciador_Colisao::Colisao(Fase* f)
         }
         
         // Com inimigos
-        for (int j = 0; j < LIs.size(); j++)
+        for (int j = 0; j < (int) LIs.size(); j++)
         {
             float difPosX = (*it)->getPosicao().x - LIs[j]->getPosicao().x;
             float difPosY = (*it)->getPosicao().y - LIs[j]->getPosicao().y;
@@ -77,7 +77,7 @@ void Gerenciador_Colisao::Colisao(Fase* f)
     }
 
     // Colisões com projéteis
-    for (int i = 0; i < LPs.size(); i)
+    for (int i = 0; i < (int) LPs.size(); i)
     {
         float difPosX = LPs[i]->getPosicao().x - j1->getPosicao().x;
         float difPosY = LPs[i]->getPosicao().y - j1->getPosicao().y;
