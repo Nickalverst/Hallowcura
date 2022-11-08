@@ -33,7 +33,7 @@ concepts related to Object-Oriented Programming (OOP), such as polymorphism and 
 GitHub - https://github.com/Hashhat
 
 #### Nicolas Barbieri Sousa
-LinkedIn - https://linkedin.com/in/nicolasbsousa/
+LinkedIn - https://linkedin.com/in/nicolasbsousa/<br>
 Portfolio - https://nickalverst.github.io/
 
 Developed on Windows 10 using the Visual Studio Community 2019 IDE version 16.11.15 backed by the SFML-2.5.1 graphics library for 32-bit computers.
