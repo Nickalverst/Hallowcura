@@ -31,7 +31,7 @@ polimorfismo e gabaritos, respectivamente.
   | Mover-se para a esquerda   | A ou LeftArrow  | L3 (esquerda) ou DPadLeft   |
   | Pausar                     | Esc             | Start/Options               |
 
-## Time
+## Equipe
 #### Regian Canuto dos Santos
 GitHub - https://github.com/Hashhat
 
