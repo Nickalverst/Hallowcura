@@ -1,7 +1,6 @@
 #### :fr: [Français](LISEZMOI.md) | :brazil: [Português](LEIAME.md)
 
 # Hallowcura
-
 The development of a digital game which applied the concepts taught during classes was required for the conclusion of
 the Programming Techniques course. To accomplish this, Hallowcura - a game in which the player must battle their way 
 through two short levels whilst avoiding obstacles - was developed. The program was constructed according to the requirements
@@ -10,6 +9,10 @@ studying the requirements, the software development cycle began, contemplating t
 coding (using the C++ programming language) and testing of recently added features. The process involved both basic and advanced
 concepts related to Object-Oriented Programming (OOP), such as polymorphism and templates, respectively.
 
+## Class diagram
+<p align="center"> <img src="UML/DiagramaEntrega.png" width="500"> <br> <i>Class diagram.</i> </p>
+
+## System requirements
 | System Requirements | |
 | ------------ | :------------: |
 | Operating System |  Windows (XP or newer), Linux or macOS. |
@@ -17,9 +20,9 @@ concepts related to Object-Oriented Programming (OOP), such as polymorphism and 
 | Additional requirements  | Hardware vendor officially supported drivers.  |
 |Graphics API|DX10, DX11, DX12 capable.|
 
+## Controls
 
-
-| Controls    | Keyboard & mouse |       Gamepad          |
+| Actions    | Keyboard & mouse |       Gamepad          |
 |:-----------:|:---------------:|:-----------------------:|
 | Move up     | W or UpArrow    | L3 (up) or DPadUp       |
 | Move down   | S or DownArrow  | L3 (down) or DPadDown   |
