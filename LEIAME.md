@@ -39,4 +39,9 @@ GitHub - https://github.com/Hashhat
 LinkedIn - https://linkedin.com/in/nicolasbsousa/<br>
 Portfólio - https://nickalverst.github.io/
 
+#### Lucas Silvério da Silva (artista)
+LinkedIn - https://www.linkedin.com/in/lucas-silv%C3%A9rio-255526193 <br>
+Instagram - https://www.instagram.com/lukethe117 <br>
+ArtStation - https://www.artstation.com/lukethe117 <br>
+
 Desenvolvido no **Windows 10** usando a IDE **Visual Studio Community 2019** versão 16.11.15 apoiado sobre a biblioteca gráfica **SFML-2.5.1** para computadores de 32 bits.
