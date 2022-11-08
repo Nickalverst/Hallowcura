@@ -13,23 +13,21 @@ concepts related to Object-Oriented Programming (OOP), such as polymorphism and 
 <p align="center"> <img src="UML/DiagramaEntrega.png" width="500"> <br> <i>Class diagram.</i> </p>
 
 ## System requirements
-| System Requirements | |
-| ------------ | :------------: |
-| Operating System |  Windows (XP or newer), Linux or macOS. |
-| CPU  | x86, x64 architecture with SSE2 instruction set support.  |
-| Additional requirements  | Hardware vendor officially supported drivers.  |
-|Graphics API|DX10, DX11, DX12 capable.|
+  | System Requirements | |
+  | ------------ | :------------: |
+  | Operating System |  Windows (XP or newer), Linux or macOS. |
+  | CPU  | x86, x64 architecture with SSE2 instruction set support.  |
+  | Additional requirements  | Hardware vendor officially supported drivers.  |
+  |Graphics API|DX10, DX11, DX12 capable.|
 
 ## Controls
-
-| Actions    | Keyboard & mouse |       Gamepad          |
-|:-----------:|:---------------:|:-----------------------:|
-| Move up     | W or UpArrow    | L3 (up) or DPadUp       |
-| Move down   | S or DownArrow  | L3 (down) or DPadDown   |
-| Accelerate  | D or RightArrow | L3 (right) or DPadRight |
-| Decelerate  | A or LeftArrow  | L3 (left) or DPadLeft   |
-| Pause       | Esc             | Start/Options           |
-
+  | Actions    | Keyboard & mouse |       Gamepad          |
+  |:-----------:|:---------------:|:-----------------------:|
+  | Jump        | W or UpArrow    | L3 (up) or DPadUp       |
+  | Fall        | S or DownArrow  | L3 (down) or DPadDown   |
+  | Move right  | D or RightArrow | L3 (right) or DPadRight |
+  | Move left   | A or LeftArrow  | L3 (left) or DPadLeft   |
+  | Pause       | Esc             | Start/Options           |
 
 ## Team
 #### Regian Canuto dos Santos
